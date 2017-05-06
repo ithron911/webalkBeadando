@@ -1,12 +1,12 @@
 package hu.iit.uni.miskolc.nemeth13.webapp.model;
 
-public enum ScreenType {
+public enum MovieScreenType {
 	SCREEN_3D("3D"),
 	SCREEN_2D("2D");
 
 	private String value;
 
-	private ScreenType(String type) {
+	private MovieScreenType(String type) {
         this.value= type;
     }
 
