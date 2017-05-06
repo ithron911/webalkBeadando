@@ -51,11 +51,11 @@
 	</build>
 
 	<modules>
-		<module>CinamTicketManager-Controller</module>
-		<module>CinemaTickerManager-Service</module>
+		<module>CinemaTicketManager-Controller</module>
+		<module>CinemaTicketManager-Service</module>
 		<module>CinemaTicketManager-ServiceImpl</module>
-		<module>CinemaTickerManager-Model</module>
-		<module>CinemaTickerManager-Persist</module>
+		<module>CinemaTicketManager-Model</module>
+		<module>CinemaTicketManager-Persist</module>
 		<module>CinemaTicketManager-PersistImpl</module>
 		<module>CinemaTicketManager-Controller</module>
 	</modules>

@@ -11,7 +11,7 @@
 	<dependencies>
 		<dependency>
 			 <groupId>hu.iit.uni.miskolc.nemeth13.webapp</groupId>
-    		<artifactId>CinemaTickerManager-Model</artifactId>
+    		<artifactId>CinemaTicketManager-Model</artifactId>
     		<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 

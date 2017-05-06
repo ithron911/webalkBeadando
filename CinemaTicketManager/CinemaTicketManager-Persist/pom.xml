@@ -5,5 +5,5 @@
     <artifactId>CinemaTicketManager</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>CinemaTickerManager-Persist</artifactId>
+  <artifactId>CinemaTicketManager-Persist</artifactId>
 </project>
