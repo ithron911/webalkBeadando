@@ -49,4 +49,7 @@
 		</plugins>
 	</build>
 
+	<modules>
+		<module>CinamTicketManager-Controller</module>
+	</modules>
 </project>
