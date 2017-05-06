@@ -1,10 +1,13 @@
 package hu.iit.uni.miskolc.nemeth13.webapp.model;
 
+import java.util.List;
+
 public class Cinema {
 
 	private int id;
 	private String address;
 	private String name;
+	private List<ScreeningRoom> screeningRooms;
 
 	public Cinema() {
 	}
@@ -31,5 +34,13 @@ public class Cinema {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public List<ScreeningRoom> getScreeningRooms() {
+		return screeningRooms;
+	}
+
+	public void setScreeningRooms(List<ScreeningRoom> screeningRooms) {
+		this.screeningRooms = screeningRooms;
 	}
 }
