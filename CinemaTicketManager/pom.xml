@@ -56,5 +56,6 @@
 		<module>CinemaTickerManager-Model</module>
 		<module>CinemaTickerManager-Persist</module>
 		<module>CinemaTicketManager-PersistImpl</module>
+		<module>CinemaTicketManager-Controller</module>
 	</modules>
 </project>

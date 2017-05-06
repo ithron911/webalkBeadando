@@ -5,5 +5,5 @@
     <artifactId>CinemaTicketManager</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>CinamTicketManager-Controller</artifactId>
+  <artifactId>CinemaTicketManager-Controller</artifactId>
 </project>
