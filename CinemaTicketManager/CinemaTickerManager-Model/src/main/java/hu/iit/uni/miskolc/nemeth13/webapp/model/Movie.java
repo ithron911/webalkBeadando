@@ -6,7 +6,7 @@ public class Movie {
 	private String title;
 	private MovieGenre genre;
 	private MovieAgeRestriction ageResctriction;
-	private ScreenType screenType;
+	private MovieScreenType screenType;
 	private int cost;
 
 	public Movie() {
@@ -44,11 +44,11 @@ public class Movie {
 		this.ageResctriction = ageResctriction;
 	}
 
-	public ScreenType getScreenType() {
+	public MovieScreenType getScreenType() {
 		return screenType;
 	}
 
-	public void setScreenType(ScreenType screenType) {
+	public void setScreenType(MovieScreenType screenType) {
 		this.screenType = screenType;
 	}
 
