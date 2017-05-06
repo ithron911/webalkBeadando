@@ -52,5 +52,6 @@
 	<modules>
 		<module>CinamTicketManager-Controller</module>
 		<module>CinemaTickerManager-Service</module>
+		<module>CinemaTicketManager-ServiceImpl</module>
 	</modules>
 </project>
