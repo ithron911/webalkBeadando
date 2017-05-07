@@ -15,15 +15,17 @@ import hu.iit.uni.miskolc.nemeth13.webapp.dao.dto.MovieDTO;
 @Transactional
 public class MovieDaoImpl implements MovieDao {
 
-	@Autowired
 	private SessionFactory sessionFactory;
 
-	public MovieDaoImpl() {
+	@Autowired
+	public MovieDaoImpl(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
 	}
 
 	@Override
 	public List<MovieDTO> listMoviesByGenre(String genre) {
-		// TODO Auto-generated method stub
+		System.out.println("haha");
+
 		return null;
 	}
 

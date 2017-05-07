@@ -14,5 +14,17 @@
 			<artifactId>CinemaTicketManager-Model</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+
+		<dependency>
+			<groupId>hu.iit.uni.miskolc.nemeth13.webapp</groupId>
+			<artifactId>CinemaTicketManager-Persist</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
+			<groupId>hu.iit.uni.miskolc.nemeth13.webapp</groupId>
+			<artifactId>CinemaTicketManager-PersistImpl</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 </project>
