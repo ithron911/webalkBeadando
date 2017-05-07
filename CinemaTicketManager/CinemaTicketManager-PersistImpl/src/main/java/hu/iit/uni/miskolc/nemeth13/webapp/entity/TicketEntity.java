@@ -7,9 +7,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
-import hu.iit.uni.miskolc.nemeth13.webapp.model.Show;
-import hu.iit.uni.miskolc.nemeth13.webapp.model.User;
-
 @Entity
 public class TicketEntity {
 
@@ -19,11 +16,11 @@ public class TicketEntity {
 
 	@OneToOne
 	@JoinColumn(name = "userId")
-	private User user;
+	private UserEntity user;
 
 	@OneToOne
 	@JoinColumn(name = "showId")
-	private Show show;
+	private ShowEntity show;
 
 	public TicketEntity() {
 	}
@@ -36,19 +33,19 @@ public class TicketEntity {
 		this.id = id;
 	}
 
-	public User getUser() {
+	public UserEntity getUser() {
 		return user;
 	}
 
-	public void setUser(User user) {
+	public void setUser(UserEntity user) {
 		this.user = user;
 	}
 
-	public Show getShow() {
+	public ShowEntity getShow() {
 		return show;
 	}
 
-	public void setShow(Show show) {
+	public void setShow(ShowEntity show) {
 		this.show = show;
 	}
 }

@@ -11,8 +11,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
-import hu.iit.uni.miskolc.nemeth13.webapp.model.Cinema;
-
 @Entity
 public class ScreeningRoomEntity {
 
@@ -22,7 +20,7 @@ public class ScreeningRoomEntity {
 
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "cinemId")
-	private Cinema cinema;
+	private CinemaEntity cinema;
 
 	@OneToMany(mappedBy = "screeningRoom")
 	private List<SeatEntity> seats;
@@ -38,11 +36,11 @@ public class ScreeningRoomEntity {
 		this.id = id;
 	}
 
-	public Cinema getCinema() {
+	public CinemaEntity getCinema() {
 		return cinema;
 	}
 
-	public void setCinema(Cinema cinema) {
+	public void setCinema(CinemaEntity cinema) {
 		this.cinema = cinema;
 	}
 

@@ -9,9 +9,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
-import hu.iit.uni.miskolc.nemeth13.webapp.model.Cinema;
-import hu.iit.uni.miskolc.nemeth13.webapp.model.Movie;
-
 @Entity
 public class ShowEntity {
 
@@ -21,11 +18,11 @@ public class ShowEntity {
 
 	@OneToOne
 	@JoinColumn(name = "cinemaId")
-	private Cinema cinema;
+	private CinemaEntity cinema;
 
 	@OneToOne
 	@JoinColumn(name = "movieId")
-	private Movie movie;
+	private MovieEntity movie;
 
 	private Timestamp date;
 
@@ -40,19 +37,19 @@ public class ShowEntity {
 		this.id = id;
 	}
 
-	public Cinema getCinema() {
+	public CinemaEntity getCinema() {
 		return cinema;
 	}
 
-	public void setCinema(Cinema cinema) {
+	public void setCinema(CinemaEntity cinema) {
 		this.cinema = cinema;
 	}
 
-	public Movie getMovie() {
+	public MovieEntity getMovie() {
 		return movie;
 	}
 
-	public void setMovie(Movie movie) {
+	public void setMovie(MovieEntity movie) {
 		this.movie = movie;
 	}
 

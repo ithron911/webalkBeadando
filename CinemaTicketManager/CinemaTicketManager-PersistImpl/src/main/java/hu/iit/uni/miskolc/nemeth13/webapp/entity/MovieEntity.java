@@ -1,15 +1,9 @@
 package hu.iit.uni.miskolc.nemeth13.webapp.entity;
 
-import javax.persistence.Convert;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
-import hu.iit.uni.miskolc.nemeth13.webapp.converter.MovieGenreConverter;
-import hu.iit.uni.miskolc.nemeth13.webapp.model.MovieAgeRestriction;
-import hu.iit.uni.miskolc.nemeth13.webapp.model.MovieGenre;
-import hu.iit.uni.miskolc.nemeth13.webapp.model.MovieScreenType;
 
 @Entity
 public class MovieEntity {
@@ -19,15 +13,9 @@ public class MovieEntity {
 	private int id;
 	private String title;
 	private int cost;
-
-	@Convert(converter = MovieGenreConverter.class)
-	private MovieGenre genre;
-
-	@Convert(converter = MovieAgeRestriction.class)
-	private MovieAgeRestriction ageResctriction;
-
-	@Convert(converter = MovieScreenType.class)
-	private MovieScreenType screenType;
+	private String genre;
+	private String ageResctriction;
+	private String screenType;
 
 	public MovieEntity() {
 	}
@@ -56,27 +44,27 @@ public class MovieEntity {
 		this.cost = cost;
 	}
 
-	public MovieGenre getGenre() {
+	public String getGenre() {
 		return genre;
 	}
 
-	public void setGenre(MovieGenre genre) {
+	public void setGenre(String genre) {
 		this.genre = genre;
 	}
 
-	public MovieAgeRestriction getAgeResctriction() {
+	public String getAgeResctriction() {
 		return ageResctriction;
 	}
 
-	public void setAgeResctriction(MovieAgeRestriction ageResctriction) {
+	public void setAgeResctriction(String ageResctriction) {
 		this.ageResctriction = ageResctriction;
 	}
 
-	public MovieScreenType getScreenType() {
+	public String getScreenType() {
 		return screenType;
 	}
 
-	public void setScreenType(MovieScreenType screenType) {
+	public void setScreenType(String screenType) {
 		this.screenType = screenType;
 	}
 }

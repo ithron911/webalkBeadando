@@ -7,8 +7,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
-import hu.iit.uni.miskolc.nemeth13.webapp.model.ScreeningRoom;
-
 public class SeatEntity {
 
 	@Id
@@ -20,7 +18,7 @@ public class SeatEntity {
 
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "screeningRoomId")
-	private ScreeningRoom screeningRoom;
+	private ScreeningRoomEntity screeningRoom;
 
 	public SeatEntity() {
 	}
@@ -57,11 +55,11 @@ public class SeatEntity {
 		this.isTaken = isTaken;
 	}
 
-	public ScreeningRoom getScreeningRoom() {
+	public ScreeningRoomEntity getScreeningRoom() {
 		return screeningRoom;
 	}
 
-	public void setScreeningRoom(ScreeningRoom screeningRoom) {
+	public void setScreeningRoom(ScreeningRoomEntity screeningRoom) {
 		this.screeningRoom = screeningRoom;
 	}
 }
