@@ -4,12 +4,16 @@ import java.util.List;
 
 import javax.transaction.Transactional;
 
+import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import hu.iit.uni.miskolc.nemeth13.webapp.dao.MovieDao;
 import hu.iit.uni.miskolc.nemeth13.webapp.dao.dto.MovieDTO;
+import hu.iit.uni.miskolc.nemeth13.webapp.daoimpl.converter.MovieEntityConverter;
+import hu.iit.uni.miskolc.nemeth13.webapp.daoimpl.entity.MovieEntity;
 
 @Repository
 @Transactional
@@ -24,15 +28,24 @@ public class MovieDaoImpl implements MovieDao {
 
 	@Override
 	public List<MovieDTO> listMoviesByGenre(String genre) {
-		System.out.println("haha");
+		Criteria criteria = sessionFactory.getCurrentSession().createCriteria(MovieEntity.class);
+		criteria.add(Restrictions.eq("genre", genre));
 
-		return null;
+		List<MovieEntity> movieEntities = criteria.list();
+		List<MovieDTO> movieDTOs = MovieEntityConverter.convertMovieEntitiesToDTO(movieEntities);
+
+		return movieDTOs;
 	}
 
 	@Override
 	public List<MovieDTO> listMoviesByCinema(int cinemaId) {
-		// TODO Auto-generated method stub
-		return null;
+		Criteria criteria = sessionFactory.getCurrentSession().createCriteria(MovieEntity.class);
+		criteria.add(Restrictions.eq("cinemaId", cinemaId));
+
+		List<MovieEntity> movieEntities = criteria.list();
+		List<MovieDTO> movieDTOs = MovieEntityConverter.convertMovieEntitiesToDTO(movieEntities);
+
+		return movieDTOs;
 	}
 
 }
