@@ -1,31 +1,32 @@
-package hu.iit.uni.miskolc.nemeth13.webapp.entity;
+package hu.iit.uni.miskolc.nemeth13.webapp.daoimpl.entity;
 
-import java.util.List;
+import java.sql.Timestamp;
 
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 @Entity
-public class ScreeningRoomEntity {
+public class ShowEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 
-	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "cinemId")
+	@OneToOne
+	@JoinColumn(name = "cinemaId")
 	private CinemaEntity cinema;
 
-	@OneToMany(mappedBy = "screeningRoom")
-	private List<SeatEntity> seats;
+	@OneToOne
+	@JoinColumn(name = "movieId")
+	private MovieEntity movie;
 
-	public ScreeningRoomEntity() {
+	private Timestamp date;
+
+	public ShowEntity() {
 	}
 
 	public int getId() {
@@ -44,11 +45,19 @@ public class ScreeningRoomEntity {
 		this.cinema = cinema;
 	}
 
-	public List<SeatEntity> getSeats() {
-		return seats;
+	public MovieEntity getMovie() {
+		return movie;
 	}
 
-	public void setSeats(List<SeatEntity> seats) {
-		this.seats = seats;
+	public void setMovie(MovieEntity movie) {
+		this.movie = movie;
+	}
+
+	public Timestamp getDate() {
+		return date;
+	}
+
+	public void setDate(Timestamp date) {
+		this.date = date;
 	}
 }

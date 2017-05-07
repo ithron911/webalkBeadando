@@ -1,4 +1,4 @@
-package hu.iit.uni.miskolc.nemeth13.webapp.entity;
+package hu.iit.uni.miskolc.nemeth13.webapp.daoimpl.entity;
 
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
