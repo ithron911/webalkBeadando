@@ -20,7 +20,7 @@ public final class MovieEntityConverter {
 		return movieDTOs;
 	}
 
-	private static MovieDTO convertMovieEntityToDTO(MovieEntity movieEntity) {
+	public static MovieDTO convertMovieEntityToDTO(MovieEntity movieEntity) {
 		MovieDTO movieDTO = new MovieDTO();
 		movieDTO.setId(movieEntity.getId());
 		movieDTO.setAgeResctriction(movieEntity.getAgeResctriction());
