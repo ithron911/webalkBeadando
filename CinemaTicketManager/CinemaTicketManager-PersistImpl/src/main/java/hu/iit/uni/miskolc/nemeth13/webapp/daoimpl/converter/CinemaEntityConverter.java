@@ -13,7 +13,6 @@ public final class CinemaEntityConverter {
 		cinemaDTO.setId(cinemaEntity.getId());
 		cinemaDTO.setAddress(cinemaEntity.getAddress());
 		cinemaDTO.setName(cinemaEntity.getName());
-		cinemaDTO.setScreeningRooms(ScreeningRoomEntityConverter.convertScreeningRoomEntitiesToDTOs(cinemaEntity.getScreeningRoomEntities()));
 
 		return cinemaDTO;
 	}

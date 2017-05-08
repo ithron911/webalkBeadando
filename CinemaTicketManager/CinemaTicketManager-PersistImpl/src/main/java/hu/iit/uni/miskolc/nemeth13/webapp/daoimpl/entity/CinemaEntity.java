@@ -1,14 +1,11 @@
 package hu.iit.uni.miskolc.nemeth13.webapp.daoimpl.entity;
 
-import java.util.List;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 
-@Entity(name = "Cinema")
+@Entity
 public class CinemaEntity {
 
 	@Id
@@ -16,9 +13,6 @@ public class CinemaEntity {
 	private int id;
 	private String address;
 	private String name;
-
-	@OneToMany(mappedBy = "cinema")
-	private List<ScreeningRoomEntity> screeningRoomEntities;
 
 	public CinemaEntity() {
 	}
@@ -45,13 +39,5 @@ public class CinemaEntity {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public List<ScreeningRoomEntity> getScreeningRoomEntities() {
-		return screeningRoomEntities;
-	}
-
-	public void setScreeningRoomEntities(List<ScreeningRoomEntity> screeningRoomEntities) {
-		this.screeningRoomEntities = screeningRoomEntities;
 	}
 }
