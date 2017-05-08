@@ -46,4 +46,12 @@ public class CinemaEntity {
 	public void setName(String name) {
 		this.name = name;
 	}
+
+	public List<ScreeningRoomEntity> getScreeningRoomEntities() {
+		return screeningRoomEntities;
+	}
+
+	public void setScreeningRoomEntities(List<ScreeningRoomEntity> screeningRoomEntities) {
+		this.screeningRoomEntities = screeningRoomEntities;
+	}
 }

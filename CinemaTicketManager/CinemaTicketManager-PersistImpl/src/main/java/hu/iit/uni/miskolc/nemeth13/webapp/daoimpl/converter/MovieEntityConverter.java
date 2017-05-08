@@ -11,7 +11,7 @@ public final class MovieEntityConverter {
 	private MovieEntityConverter() {
 	}
 
-	public static List<MovieDTO> convertMovieEntitiesToDTO(List<MovieEntity> movieEntities) {
+	public static List<MovieDTO> convertMovieEntitiesToDTOs(List<MovieEntity> movieEntities) {
 		List<MovieDTO> movieDTOs = new ArrayList<>();
 
 		for (MovieEntity movieEntity : movieEntities) {

@@ -32,9 +32,8 @@ public class MovieDaoImpl implements MovieDao {
 		criteria.add(Restrictions.eq("genre", genre));
 
 		List<MovieEntity> movieEntities = criteria.list();
-		List<MovieDTO> movieDTOs = MovieEntityConverter.convertMovieEntitiesToDTO(movieEntities);
 
-		return movieDTOs;
+		return MovieEntityConverter.convertMovieEntitiesToDTOs(movieEntities);
 	}
 
 	@Override
@@ -43,9 +42,8 @@ public class MovieDaoImpl implements MovieDao {
 		criteria.add(Restrictions.eq("cinemaId", cinemaId));
 
 		List<MovieEntity> movieEntities = criteria.list();
-		List<MovieDTO> movieDTOs = MovieEntityConverter.convertMovieEntitiesToDTO(movieEntities);
 
-		return movieDTOs;
+		return MovieEntityConverter.convertMovieEntitiesToDTOs(movieEntities);
 	}
 
 }
