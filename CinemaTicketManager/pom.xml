@@ -51,7 +51,6 @@
 	</build>
 
 	<modules>
-		<module>CinemaTicketManager-Controller</module>
 		<module>CinemaTicketManager-Service</module>
 		<module>CinemaTicketManager-ServiceImpl</module>
 		<module>CinemaTicketManager-Model</module>
