@@ -56,5 +56,6 @@
 	</dependencies>
 	<modules>
 		<module>CinemaTicketShop-Model</module>
+		<module>CinemaTicketShop-Persist</module>
 	</modules>
 </project>
