@@ -13,6 +13,13 @@
 		<hibernate.version>5.2.10.Final</hibernate.version>
 	</properties>
 	<dependencies>
+		<!-- Persist module -->
+		<dependency>
+			<groupId>hu.iit.uni.miskolc.nemeth.webdev</groupId>
+			<artifactId>CinemaTicketShop-Persist</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
 		<!-- Spring Transactions -->
 		<dependency>
 			<groupId>org.springframework</groupId>
