@@ -8,8 +8,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-@Entity
-@Table(name = "Ticket")
+@Entity(name = "Ticket")
+@Table(name = "Tickets")
 public class TicketEntity {
 
 	@Id
