@@ -26,7 +26,7 @@ public class ShowDaoImpl implements ShowDao {
 
 	@Override
 	public List<ShowDTO> listShowsByMovieAndCinemaId(int movieId, int cinemaId) {
-		String select = "SELECT s FROM Shows s WHERE s.movie.id = :movieId AND s.cinema.id = :cinemaId";
+		String select = "SELECT s FROM Show s WHERE s.movie.id = :movieId AND s.cinema.id = :cinemaId";
 		TypedQuery<ShowEntity> query = this.entityManager.createQuery(select, ShowEntity.class);
 		query.setParameter("movieId", movieId);
 		query.setParameter("cinemaId", cinemaId);

@@ -25,7 +25,7 @@ public class MovieDaoImpl implements MovieDao {
 	}
 	@Override
 	public List<MovieDTO> listMoviesByGenre(String genre) {
-		String select = "SELECT m FROM Movies m WHERE m.genre = :genre";
+		String select = "SELECT m FROM Movie m WHERE m.genre = :genre";
 		TypedQuery<MovieEntity> query = this.entityManager.createQuery(select, MovieEntity.class);
 		query.setParameter("genre", genre);
 
@@ -36,7 +36,7 @@ public class MovieDaoImpl implements MovieDao {
 
 	@Override
 	public List<MovieDTO> listMoviesByCinema(int cinemaId) {
-		String select = "SELECT m FROM Movies m WHERE m.cinema.id = :cinemaId";
+		String select = "SELECT m FROM Movie m WHERE m.cinema.id = :cinemaId";
 		TypedQuery<MovieEntity> query = this.entityManager.createQuery(select, MovieEntity.class);
 		query.setParameter("cinemaId", cinemaId);
 

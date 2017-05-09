@@ -21,7 +21,7 @@ public class UserDaoImpl implements UserDao {
 
 	@Override
 	public UserDTO getUserByLoginDatas(String username, String password) throws InvalidUserException {
-		String select = "SELECT u FROM Users u WHERE u.username = :username AND u.password = :password";
+		String select = "SELECT u FROM User u WHERE u.username = :username AND u.password = :password";
 		TypedQuery<UserEntity> query = this.entityManager.createQuery(select, UserEntity.class);
 		query.setParameter("username", username);
 		query.setParameter("password", password);
@@ -34,12 +34,17 @@ public class UserDaoImpl implements UserDao {
 	@Override
 	public void modifyUser(UserDTO userDTO) throws InvalidUserException {
 		UserEntity userEntity = this.entityManager.find(UserEntity.class, userDTO.getId());
-		userEntity.setAge(userDTO.getAge());
-		userEntity.setEmail(userDTO.getEmail());
-		userEntity.setFirstname(userDTO.getFirstname());
-		userEntity.setLastname(userDTO.getLastname());
 
-		this.entityManager.merge(userEntity);
+		if (userEntity != null) {
+			userEntity.setAge(userDTO.getAge());
+			userEntity.setEmail(userDTO.getEmail());
+			userEntity.setFirstname(userDTO.getFirstname());
+			userEntity.setLastname(userDTO.getLastname());
+
+			this.entityManager.merge(userEntity);
+		} else {
+			throw new InvalidUserException("Az adatok mentése sikertelen volt!");
+		}
 	}
 
 }
