@@ -53,7 +53,7 @@ public class DaoApplicationContextConfig {
 		dataSource.setUsername(environment.getProperty(DB_USERNAME_PROPERTY));
 		dataSource.setPassword(environment.getProperty(DB_PASSWORD_PROPERTY));
 
-		return dataSource();
+		return dataSource;
 	}
 
 	@Bean
