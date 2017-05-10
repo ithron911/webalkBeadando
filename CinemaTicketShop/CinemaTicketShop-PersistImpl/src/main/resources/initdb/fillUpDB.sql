@@ -1,7 +1,9 @@
+use cinematicketshop;
+
 INSERT INTO Users (ID, Username, Password, Firstname, Lastname, Age, Email) VALUES
 	(1, 'user', 'user', 'John', 'Smith', 23, 'john.smith@gmail.com'),
-	(2, 'test1', 'test1', 'Michael', 'Smith', 22, 'michael.smith@gmail.com');
-	(3, 'test2', 'test2', 'Jane', 'Sheperd', 20, 'jane.sheperd@gmail.com');
+	(2, 'test1', 'test1', 'Michael', 'Smith', 22, 'michael.smith@gmail.com'),
+	(3, 'test2', 'test2', 'Jane', 'Sheperd', 20, 'jane.sheperd@gmail.com'),
 	(4, 'test3', 'test3', 'John', 'Cooper', 20, 'jane.sheperd@gmail.com');
 
 INSERT INTO Cinemas (ID, Address, Name) VALUES
@@ -59,4 +61,3 @@ INSERT INTO Tickets (ID, UserID, ShowID, SeatID) VALUES
 	(7, 4, 4, 3),
 	(8, 4, 4, 4),
 	(9, 4, 4, 5);
-	
