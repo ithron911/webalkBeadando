@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import hu.iit.uni.miskolc.nemeth.webdev.dao.TicketDao;
 import hu.iit.uni.miskolc.nemeth.webdev.dao.dto.TicketDTO;
+import hu.iit.uni.miskolc.nemeth.webdev.daoimpl.entity.SeatEntity;
 import hu.iit.uni.miskolc.nemeth.webdev.daoimpl.entity.ShowEntity;
 import hu.iit.uni.miskolc.nemeth.webdev.daoimpl.entity.TicketEntity;
 import hu.iit.uni.miskolc.nemeth.webdev.daoimpl.entity.UserEntity;
@@ -26,10 +27,12 @@ public class TicketDaoImpl implements TicketDao {
 	public void buyTicket(TicketDTO ticketDTO) {
 		ShowEntity showEntity = this.entityManager.find(ShowEntity.class, ticketDTO.getShow().getId());
 		UserEntity userEntity = this.entityManager.find(UserEntity.class, ticketDTO.getUser().getId());
+		SeatEntity seatEntity = this.entityManager.find(SeatEntity.class, ticketDTO.getSeatDTO().getId());
 
 		TicketEntity ticketEntity = new TicketEntity();
 		ticketEntity.setShow(showEntity);
 		ticketEntity.setUser(userEntity);
+		ticketEntity.setSeatEntity(seatEntity);
 
 		this.entityManager.persist(ticketEntity);
 	}

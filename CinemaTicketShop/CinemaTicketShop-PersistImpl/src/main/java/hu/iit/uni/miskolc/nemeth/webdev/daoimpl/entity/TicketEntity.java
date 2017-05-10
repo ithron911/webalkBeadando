@@ -2,6 +2,7 @@ package hu.iit.uni.miskolc.nemeth.webdev.daoimpl.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -25,6 +26,10 @@ public class TicketEntity {
 	@OneToOne
 	@JoinColumn(name = "ShowID")
 	private ShowEntity show;
+
+	@OneToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "SeatID")
+	private SeatEntity seatEntity;
 
 	public TicketEntity() {
 	}
@@ -51,5 +56,13 @@ public class TicketEntity {
 
 	public void setShow(ShowEntity show) {
 		this.show = show;
+	}
+
+	public SeatEntity getSeatEntity() {
+		return seatEntity;
+	}
+
+	public void setSeatEntity(SeatEntity seatEntity) {
+		this.seatEntity = seatEntity;
 	}
 }

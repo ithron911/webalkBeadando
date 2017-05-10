@@ -1,5 +1,8 @@
-INSERT INTO Users (ID, Username, Password, Firstname, Lastname, Age, Email)
-	VALUES (1, 'test', 'test', 'John', 'Smith', 23, 'john.smith@gmail.com');
+INSERT INTO Users (ID, Username, Password, Firstname, Lastname, Age, Email) VALUES
+	(1, 'user', 'user', 'John', 'Smith', 23, 'john.smith@gmail.com'),
+	(2, 'test1', 'test1', 'Michael', 'Smith', 22, 'michael.smith@gmail.com');
+	(3, 'test2', 'test2', 'Jane', 'Sheperd', 20, 'jane.sheperd@gmail.com');
+	(4, 'test3', 'test3', 'John', 'Cooper', 20, 'jane.sheperd@gmail.com');
 
 INSERT INTO Cinemas (ID, Address, Name) VALUES
 	(1, '3525. Miskolc, Miskolc Pláza, Szentpáli út 2-4.', 'Cinema City Miskolc'),
@@ -40,7 +43,20 @@ INSERT INTO Seats (ID, RowNumber, SeatNumber, IsTaken, ScreeningRoomID) VALUES
 	(19, 1, 4, true, 4),
 	(20, 1, 5, true, 4);	
 
-INSERT INTO Shows (ID, CinemaID, MovieID, Date) VALUES
+INSERT INTO Shows (ID, ScreeningRoomID, MovieID, Date) VALUES
 	(1, 1, 1, "1494583200"),
-	(2, 1, 4, "1494586800"),
-	(3, 2, 2, )
+	(2, 2, 4, "1494586800"),
+	(3, 3, 2, "1494586800"),
+	(4, 4, 3, "1494583200");
+
+INSERT INTO Tickets (ID, UserID, ShowID, SeatID) VALUES
+	(1, 2, 1, 3),
+	(2, 2, 1, 4),
+	(3, 3, 2, 3),
+	(4, 3, 2, 4),
+	(5, 4, 4, 1),
+	(6, 4, 4, 2),
+	(7, 4, 4, 3),
+	(8, 4, 4, 4),
+	(9, 4, 4, 5);
+	
