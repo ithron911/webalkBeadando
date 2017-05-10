@@ -26,6 +26,7 @@
 		<module>CinemaTicketShop-Model</module>
 		<module>CinemaTicketShop-Persist</module>
 		<module>CinemaTicketShop-PersistImpl</module>
+		<module>CinemaTicketShop-Controller</module>
 	</modules>
 
   <build>
