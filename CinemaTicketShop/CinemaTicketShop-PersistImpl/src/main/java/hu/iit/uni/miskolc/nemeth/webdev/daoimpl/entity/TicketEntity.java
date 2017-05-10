@@ -1,5 +1,6 @@
 package hu.iit.uni.miskolc.nemeth.webdev.daoimpl.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,14 +15,15 @@ public class TicketEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "ID")
 	private int id;
 
 	@OneToOne
-	@JoinColumn(name = "userId")
+	@JoinColumn(name = "UserID")
 	private UserEntity user;
 
 	@OneToOne
-	@JoinColumn(name = "showId")
+	@JoinColumn(name = "ShowID")
 	private ShowEntity show;
 
 	public TicketEntity() {

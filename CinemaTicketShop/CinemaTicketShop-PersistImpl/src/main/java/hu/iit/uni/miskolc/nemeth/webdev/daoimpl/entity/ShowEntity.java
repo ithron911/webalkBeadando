@@ -2,6 +2,7 @@ package hu.iit.uni.miskolc.nemeth.webdev.daoimpl.entity;
 
 import java.sql.Timestamp;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,16 +17,18 @@ public class ShowEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "ID")
 	private int id;
 
 	@OneToOne
-	@JoinColumn(name = "cinemaId")
+	@JoinColumn(name = "CinemaID")
 	private CinemaEntity cinema;
 
 	@OneToOne
-	@JoinColumn(name = "movieId")
+	@JoinColumn(name = "MovieID")
 	private MovieEntity movie;
 
+	@Column(name = "Date")
 	private Timestamp date;
 
 	public ShowEntity() {

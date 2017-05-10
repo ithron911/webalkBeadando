@@ -1,5 +1,6 @@
 package hu.iit.uni.miskolc.nemeth.webdev.daoimpl.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -15,10 +16,11 @@ public class ScreeningRoomEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "ID")
 	private int id;
 
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "cinemId")
+	@JoinColumn(name = "CinemID")
 	private CinemaEntity cinema;
 
 	public ScreeningRoomEntity() {

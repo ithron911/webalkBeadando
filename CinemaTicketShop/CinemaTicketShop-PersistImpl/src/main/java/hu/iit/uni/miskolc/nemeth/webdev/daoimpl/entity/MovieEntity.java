@@ -1,5 +1,6 @@
 package hu.iit.uni.miskolc.nemeth.webdev.daoimpl.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,11 +13,22 @@ public class MovieEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "ID")
 	private int id;
+
+	@Column(name = "Title")
 	private String title;
+
+	@Column(name = "Cost")
 	private int cost;
+
+	@Column(name = "Genre")
 	private String genre;
+
+	@Column(name = "AgeResctriction")
 	private String ageResctriction;
+
+	@Column(name = "ScreenType")
 	private String screenType;
 
 	public MovieEntity() {
