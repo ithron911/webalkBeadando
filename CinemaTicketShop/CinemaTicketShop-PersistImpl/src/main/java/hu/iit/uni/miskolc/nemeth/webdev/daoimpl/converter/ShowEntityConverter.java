@@ -24,7 +24,7 @@ public final class ShowEntityConverter {
 	private static ShowDTO convertShowEntityToDTO(ShowEntity showEntity) {
 		ShowDTO showDTO = new ShowDTO();
 		showDTO.setId(showEntity.getId());
-		showDTO.setCinema(CinemaEntityConverter.convertCinemaEntityToDto(showEntity.getCinema()));
+		showDTO.setScreeningRoom(ScreeningRoomEntityConverter.convertScreeningRoomEntityToDTO(showEntity.getScreeningRoom()));
 		showDTO.setDate(showEntity.getDate());
 		showDTO.setMovie(MovieEntityConverter.convertMovieEntityToDTO(showEntity.getMovie()));
 		

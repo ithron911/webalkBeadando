@@ -21,8 +21,8 @@ public class ShowEntity {
 	private int id;
 
 	@OneToOne
-	@JoinColumn(name = "CinemaID")
-	private CinemaEntity cinema;
+	@JoinColumn(name = "ScreeningRoomID")
+	private ScreeningRoomEntity screeningRoom;
 
 	@OneToOne
 	@JoinColumn(name = "MovieID")
@@ -42,12 +42,12 @@ public class ShowEntity {
 		this.id = id;
 	}
 
-	public CinemaEntity getCinema() {
-		return cinema;
+	public ScreeningRoomEntity getScreeningRoom() {
+		return screeningRoom;
 	}
 
-	public void setCinema(CinemaEntity cinema) {
-		this.cinema = cinema;
+	public void setScreeningRoom(ScreeningRoomEntity screeningRoom) {
+		this.screeningRoom = screeningRoom;
 	}
 
 	public MovieEntity getMovie() {

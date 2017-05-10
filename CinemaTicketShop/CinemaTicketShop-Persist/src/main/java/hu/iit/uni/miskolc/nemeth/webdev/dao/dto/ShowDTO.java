@@ -5,7 +5,7 @@ import java.util.Date;
 public class ShowDTO {
 
 	private int id;
-	private CinemaDTO cinema;
+	private ScreeningRoomDTO screeningRoom;
 	private MovieDTO movie;
 	private Date date;
 
@@ -20,12 +20,12 @@ public class ShowDTO {
 		this.id = id;
 	}
 
-	public CinemaDTO getCinema() {
-		return cinema;
+	public ScreeningRoomDTO getScreeningRoom() {
+		return screeningRoom;
 	}
 
-	public void setCinema(CinemaDTO cinema) {
-		this.cinema = cinema;
+	public void setScreeningRoom(ScreeningRoomDTO screeningRoom) {
+		this.screeningRoom = screeningRoom;
 	}
 
 	public MovieDTO getMovie() {
