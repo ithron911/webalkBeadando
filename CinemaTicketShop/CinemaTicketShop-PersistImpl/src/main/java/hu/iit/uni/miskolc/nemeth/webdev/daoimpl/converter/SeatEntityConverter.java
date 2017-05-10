@@ -20,7 +20,7 @@ public final class SeatEntityConverter {
 		return seatDTOs;
 	}
 
-	private static SeatDTO convertSeatEntityToDTO(SeatEntity seatEntity) {
+	public static SeatDTO convertSeatEntityToDTO(SeatEntity seatEntity) {
 		SeatDTO seatDTO = new SeatDTO();
 		seatDTO.setId(seatEntity.getId());
 		seatDTO.setRowNumber(seatEntity.getRowNumber());

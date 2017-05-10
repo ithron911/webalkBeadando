@@ -1,13 +1,17 @@
 package hu.iit.uni.miskolc.nemeth.webdev.daoimpl;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import hu.iit.uni.miskolc.nemeth.webdev.dao.TicketDao;
 import hu.iit.uni.miskolc.nemeth.webdev.dao.dto.TicketDTO;
+import hu.iit.uni.miskolc.nemeth.webdev.daoimpl.converter.TicketEntityConverter;
 import hu.iit.uni.miskolc.nemeth.webdev.daoimpl.entity.SeatEntity;
 import hu.iit.uni.miskolc.nemeth.webdev.daoimpl.entity.ShowEntity;
 import hu.iit.uni.miskolc.nemeth.webdev.daoimpl.entity.TicketEntity;
@@ -35,6 +39,16 @@ public class TicketDaoImpl implements TicketDao {
 		ticketEntity.setSeatEntity(seatEntity);
 
 		this.entityManager.persist(ticketEntity);
+	}
+
+	@Override
+	public List<TicketDTO> getTicketsByUserId(int userId) {
+		String select = "SELECT t from Ticket t WHERE t.user.id = :userId";
+		TypedQuery<TicketEntity> query = this.entityManager.createQuery(select, TicketEntity.class);
+		query.setParameter("userId", userId);
+
+		List<TicketEntity> ticketEntities = query.getResultList();
+		return TicketEntityConverter.convertTicketEntitiesToDTOs(ticketEntities);
 	}
 
 }

@@ -21,7 +21,7 @@ public final class ShowEntityConverter {
 		return showDTOs;
 	}
 
-	private static ShowDTO convertShowEntityToDTO(ShowEntity showEntity) {
+	public static ShowDTO convertShowEntityToDTO(ShowEntity showEntity) {
 		ShowDTO showDTO = new ShowDTO();
 		showDTO.setId(showEntity.getId());
 		showDTO.setScreeningRoom(ScreeningRoomEntityConverter.convertScreeningRoomEntityToDTO(showEntity.getScreeningRoom()));
