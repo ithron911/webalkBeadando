@@ -3,9 +3,9 @@ package hu.iit.uni.miskolc.nemeth.webdev.daoimpl;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -18,7 +18,7 @@ import hu.iit.uni.miskolc.nemeth.webdev.daoimpl.entity.ShowEntity;
 @Transactional
 public class ShowDaoImpl implements ShowDao {
 
-	@Autowired
+	@PersistenceContext
 	private EntityManager entityManager;
 
 	public ShowDaoImpl() {

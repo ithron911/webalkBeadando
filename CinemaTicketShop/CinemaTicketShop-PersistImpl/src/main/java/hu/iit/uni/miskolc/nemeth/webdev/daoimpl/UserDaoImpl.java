@@ -1,9 +1,8 @@
 package hu.iit.uni.miskolc.nemeth.webdev.daoimpl;
 
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
-
-import org.springframework.beans.factory.annotation.Autowired;
 
 import hu.iit.uni.miskolc.nemeth.webdev.dao.UserDao;
 import hu.iit.uni.miskolc.nemeth.webdev.dao.dto.UserDTO;
@@ -13,7 +12,7 @@ import hu.iit.uni.miskolc.nemeth.webdev.daoimpl.entity.UserEntity;
 
 public class UserDaoImpl implements UserDao {
 
-	@Autowired
+	@PersistenceContext
 	private EntityManager entityManager;
 
 	public UserDaoImpl() {
