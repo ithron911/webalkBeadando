@@ -70,7 +70,7 @@ public class DaoApplicationContextConfig {
 	}
 
 	@Bean
-	private JpaTransactionManager transactionManager() {
+	public JpaTransactionManager transactionManager() {
 		JpaTransactionManager transactionManager = new JpaTransactionManager();
 		transactionManager.setEntityManagerFactory(entityManagerFactory().getObject());
 
