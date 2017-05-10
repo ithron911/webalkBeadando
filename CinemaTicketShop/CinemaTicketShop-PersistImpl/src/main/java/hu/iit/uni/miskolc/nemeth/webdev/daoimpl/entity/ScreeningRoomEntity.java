@@ -20,7 +20,7 @@ public class ScreeningRoomEntity {
 	private int id;
 
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "CinemID")
+	@JoinColumn(name = "CinemaID")
 	private CinemaEntity cinema;
 
 	public ScreeningRoomEntity() {

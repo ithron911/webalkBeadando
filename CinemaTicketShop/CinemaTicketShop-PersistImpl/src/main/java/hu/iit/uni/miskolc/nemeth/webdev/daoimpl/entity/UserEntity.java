@@ -1,5 +1,6 @@
 package hu.iit.uni.miskolc.nemeth.webdev.daoimpl.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,12 +13,25 @@ public class UserEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "ID")
 	private int id;
+
+	@Column(name = "Username")
 	private String username;
+
+	@Column(name = "Password")
 	private String password;
+
+	@Column(name = "Firstname")
 	private String firstname;
+
+	@Column(name = "Lastname")
 	private String lastname;
+
+	@Column(name = "Age")
 	private int age;
+
+	@Column(name = "Email")
 	private String email;
 
 	public UserEntity() {
