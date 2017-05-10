@@ -5,7 +5,7 @@ import java.util.Date;
 public class Show {
 
 	private int id;
-	private Cinema cinema;
+	private ScreeningRoom screeningRoom;
 	private Movie movie;
 	private Date date;
 
@@ -20,12 +20,12 @@ public class Show {
 		this.id = id;
 	}
 
-	public Cinema getCinema() {
-		return cinema;
+	public ScreeningRoom getScreeningRoom() {
+		return screeningRoom;
 	}
 
-	public void setCinema(Cinema cinema) {
-		this.cinema = cinema;
+	public void setScreeningRoom(ScreeningRoom screeningRoom) {
+		this.screeningRoom = screeningRoom;
 	}
 
 	public Movie getMovie() {
