@@ -28,13 +28,13 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 
 	    http.authorizeRequests()
-	    .antMatchers("/").permitAll()
-		.antMatchers("/**").access("hasRole('ADMIN')")
-		.and()
-			.formLogin().loginProcessingUrl("/login")
-			.usernameParameter("username")
-			.passwordParameter("password")
-		.and()
-			.csrf().disable();
+		    .antMatchers("/").permitAll()
+			.antMatchers("/movies/**").access("hasRole('ADMIN')")
+			.and()
+				.formLogin().loginProcessingUrl("/login")
+				.usernameParameter("username")
+				.passwordParameter("password")
+			.and()
+				.csrf().disable();
 	}
 }
