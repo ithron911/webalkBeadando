@@ -7,4 +7,6 @@ public interface UserDao {
 	User getUserByLoginDatas(String username, String password) throws InvalidUserException;
 
 	void modifyUser(User user) throws InvalidUserException;
+
+	User getUSerById(int userId) throws InvalidUserException;
 }
