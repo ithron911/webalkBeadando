@@ -11,4 +11,6 @@ public interface SeatDao {
 	List<Seat> listSeatsByShowId(int showId);
 
 	boolean isSeatTaken(int seatId) throws InvalidSeatException;
+
+	Seat getSeatById(int seatId) throws InvalidSeatException;
 }

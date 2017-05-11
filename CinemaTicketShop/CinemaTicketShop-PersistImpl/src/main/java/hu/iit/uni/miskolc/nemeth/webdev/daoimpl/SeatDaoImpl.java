@@ -64,4 +64,16 @@ public class SeatDaoImpl implements SeatDao {
 		return isSeatTaken;
 	}
 
+	@Override
+	public Seat getSeatById(int seatId) throws InvalidSeatException {
+		SeatEntity seatEntity = this.entityManager.find(SeatEntity.class, seatId);
+		Seat seat = null;
+
+		if (seatEntity != null) {
+			seat = SeatEntityConverter.convertSeatEntityToModel(seatEntity);
+		}
+
+		return seat;
+	}
+
 }
