@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import hu.iit.uni.miskolc.nemeth.webdev.dao.ShowDao;
+import hu.iit.uni.miskolc.nemeth.webdev.dao.exception.InvalidShowException;
 import hu.iit.uni.miskolc.nemeth.webdev.daoimpl.converter.ShowEntityConverter;
 import hu.iit.uni.miskolc.nemeth.webdev.daoimpl.entity.ShowEntity;
 import hu.iit.uni.miskolc.nemeth.webdev.model.Show;
@@ -33,6 +34,18 @@ public class ShowDaoImpl implements ShowDao {
 		List<ShowEntity> showEntities = query.getResultList();
 
 		return ShowEntityConverter.convertShowEntitiesToModels(showEntities);
+	}
+
+	@Override
+	public Show getShowById(int showId) throws InvalidShowException {
+		ShowEntity showEntity = this.entityManager.find(ShowEntity.class, showId);
+		Show show = null;
+
+		if (showEntity != null) {
+			show = ShowEntityConverter.convertShowEntityToModel(showEntity);
+		}
+
+		return show;
 	}
 
 }
