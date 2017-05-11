@@ -1,6 +1,7 @@
 package hu.iit.uni.miskolc.nemeth.webdev.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -25,5 +26,10 @@ public class UserController {
 		@RequestParam("password") String password
 	)throws UserNotExistsException {
 		return this.userService.getUserByLoginDatas(username, password);
+	}
+
+	@RequestMapping(value = "/modifyUser", method = RequestMethod.POST)
+	public void modifyUser(@RequestBody User user) throws UserNotExistsException {
+		this.userService.modifyUser(user);
 	}
 }
