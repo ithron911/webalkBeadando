@@ -39,9 +39,9 @@ public class TicketServiceImpl implements TicketService {
 	}
 
 	@Override
-	public void buyTicket(int userId, int showId, int seatId) throws InvalidTicketResourcesException, SeatBookedException {
+	public void buyTicket(String username, int showId, int seatId) throws InvalidTicketResourcesException, SeatBookedException {
 		try {
-			User user = this.userService.getUserByUserId(userId);
+			User user = this.userService.getUserByUsername(username);
 			Show show = this.showService.getShowById(showId);
 			Seat seat = this.seatService.getSeatById(seatId);
 

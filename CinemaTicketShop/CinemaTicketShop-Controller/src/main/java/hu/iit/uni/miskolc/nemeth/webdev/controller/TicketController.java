@@ -28,7 +28,7 @@ public class TicketController {
 
 	@RequestMapping(value = "/buyTicket", method = RequestMethod.POST)
 	public void buyTicket(@RequestBody TicketRequest ticketRequest) throws InvalidTicketResourcesException, SeatBookedException {
-		this.ticketService.buyTicket(ticketRequest.getUserId(), ticketRequest.getShowId(), ticketRequest.getSeatId());
+		this.ticketService.buyTicket(ticketRequest.getUsername(), ticketRequest.getShowId(), ticketRequest.getSeatId());
 	}
 
 	@RequestMapping(value = "/getTicketsByUserId/{userId}", method = RequestMethod.GET)

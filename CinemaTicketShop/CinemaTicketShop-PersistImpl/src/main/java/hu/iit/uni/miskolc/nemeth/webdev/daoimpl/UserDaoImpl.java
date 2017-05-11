@@ -37,7 +37,7 @@ public class UserDaoImpl implements UserDao {
 
 	@Override
 	public void modifyUser(User userDTO) throws InvalidUserException {
-		UserEntity userEntity = this.entityManager.find(UserEntity.class, userDTO.getId());
+		UserEntity userEntity = this.entityManager.find(UserEntity.class, userDTO.getUsername());
 
 		if (userEntity != null) {
 			userEntity.setAge(userDTO.getAge());
@@ -52,8 +52,8 @@ public class UserDaoImpl implements UserDao {
 	}
 
 	@Override
-	public User getUserById(int userId) throws InvalidUserException {
-		UserEntity userEntity = this.entityManager.find(UserEntity.class, userId);
+	public User getUserByUsername(String username) throws InvalidUserException {
+		UserEntity userEntity = this.entityManager.find(UserEntity.class, username);
 		User user = null;
 
 		if (userEntity != null) {

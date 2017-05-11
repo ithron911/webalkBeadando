@@ -41,11 +41,11 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public User getUserByUserId(int userId) throws UserNotExistsException {
+	public User getUserByUsername(String username) throws UserNotExistsException {
 		User user = null;
 
 		try {
-			user = this.userDao.getUserById(userId);
+			user = this.userDao.getUserByUsername(username);
 		} catch (InvalidUserException e) {
 			throw new UserNotExistsException();
 		}

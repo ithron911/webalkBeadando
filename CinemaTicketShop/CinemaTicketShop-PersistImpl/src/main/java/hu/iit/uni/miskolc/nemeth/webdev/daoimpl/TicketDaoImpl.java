@@ -30,7 +30,7 @@ public class TicketDaoImpl implements TicketDao {
 	@Override
 	public void buyTicket(Ticket ticketDTO) {
 		ShowEntity showEntity = this.entityManager.find(ShowEntity.class, ticketDTO.getShow().getId());
-		UserEntity userEntity = this.entityManager.find(UserEntity.class, ticketDTO.getUser().getId());
+		UserEntity userEntity = this.entityManager.find(UserEntity.class, ticketDTO.getUser().getUsername());
 		SeatEntity seatEntity = this.entityManager.find(SeatEntity.class, ticketDTO.getSeat().getId());
 
 		TicketEntity ticketEntity = new TicketEntity();

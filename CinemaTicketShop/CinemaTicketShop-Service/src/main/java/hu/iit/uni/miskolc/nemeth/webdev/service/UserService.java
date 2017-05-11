@@ -8,5 +8,5 @@ public interface UserService {
 
 	void modifyUser(User user) throws UserNotExistsException;
 
-	User getUserByUserId(int userId) throws UserNotExistsException;
+	User getUserByUsername(String username) throws UserNotExistsException;
 }
