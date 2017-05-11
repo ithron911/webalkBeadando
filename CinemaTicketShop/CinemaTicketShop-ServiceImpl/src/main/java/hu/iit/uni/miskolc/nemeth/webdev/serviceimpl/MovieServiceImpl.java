@@ -10,6 +10,7 @@ import hu.iit.uni.miskolc.nemeth.webdev.dao.MovieDao;
 import hu.iit.uni.miskolc.nemeth.webdev.model.Movie;
 import hu.iit.uni.miskolc.nemeth.webdev.model.MovieGenre;
 import hu.iit.uni.miskolc.nemeth.webdev.service.MovieService;
+import hu.iit.uni.miskolc.nemeth.webdev.serviceimpl.converter.MovieGenreEnumConverter;
 
 @Service
 public class MovieServiceImpl implements MovieService {
@@ -22,7 +23,8 @@ public class MovieServiceImpl implements MovieService {
 
 	@Override
 	public List<Movie> listMoviesByGenre(String genre) {
-		return this.movieDao.listMoviesByGenre(genre);
+		MovieGenre movieGenre = MovieGenreEnumConverter.convertStringToMovieGenres(genre);
+		return this.movieDao.listMoviesByGenre(movieGenre);
 	}
 
 	@Override

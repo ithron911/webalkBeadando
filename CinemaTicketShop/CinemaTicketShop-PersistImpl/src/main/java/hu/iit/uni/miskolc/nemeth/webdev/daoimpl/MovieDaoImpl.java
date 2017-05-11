@@ -13,6 +13,7 @@ import hu.iit.uni.miskolc.nemeth.webdev.dao.MovieDao;
 import hu.iit.uni.miskolc.nemeth.webdev.daoimpl.converter.MovieEntityConverter;
 import hu.iit.uni.miskolc.nemeth.webdev.daoimpl.entity.MovieEntity;
 import hu.iit.uni.miskolc.nemeth.webdev.model.Movie;
+import hu.iit.uni.miskolc.nemeth.webdev.model.MovieGenre;
 
 @Repository
 @Transactional
@@ -24,7 +25,7 @@ public class MovieDaoImpl implements MovieDao {
 	public MovieDaoImpl() {
 	}
 	@Override
-	public List<Movie> listMoviesByGenre(String genre) {
+	public List<Movie> listMoviesByGenre(MovieGenre genre) {
 		String select = "SELECT m FROM Movie m WHERE m.genre = :genre";
 		TypedQuery<MovieEntity> query = this.entityManager.createQuery(select, MovieEntity.class);
 		query.setParameter("genre", genre);
