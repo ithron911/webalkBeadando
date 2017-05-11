@@ -9,4 +9,6 @@ public interface SeatDao {
 	void bookSeat(int seatId) throws InvalidSeatException;
 
 	List<Seat> listSeatsByScreeningRoom(int screeningRoomId);
+
+	boolean isSeatTaken(int seatId) throws InvalidSeatException;
 }

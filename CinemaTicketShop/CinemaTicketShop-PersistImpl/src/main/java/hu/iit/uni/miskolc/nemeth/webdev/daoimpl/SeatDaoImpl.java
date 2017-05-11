@@ -49,4 +49,11 @@ public class SeatDaoImpl implements SeatDao {
 		return SeatEntityConverter.convertSeatEntitiesToModels(seatEntities);
 	}
 
+	@Override
+	public boolean isSeatTaken(int seatId) throws InvalidSeatException {
+		SeatEntity seatEntity = this.entityManager.find(SeatEntity.class, seatId);
+
+		return seatEntity.isTaken();
+	}
+
 }
