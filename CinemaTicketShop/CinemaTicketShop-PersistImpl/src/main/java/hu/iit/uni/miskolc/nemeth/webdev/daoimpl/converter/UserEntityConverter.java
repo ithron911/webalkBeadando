@@ -10,7 +10,6 @@ public final class UserEntityConverter {
 
 	public static User convertUserEntityToModel (UserEntity userEntity) {
 		User user = new User();
-		user.setId(userEntity.getId());
 		user.setAge(userEntity.getAge());
 		user.setEmail(userEntity.getEmail());
 		user.setFirstname(userEntity.getFirstname());

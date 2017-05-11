@@ -1,10 +1,16 @@
 use cinematicketshop;
 
-INSERT INTO Users (ID, Username, Password, Firstname, Lastname, Age, Email, Enabled, Role) VALUES
-	(1, 'user', 'user', 'John', 'Smith', 23, 'john.smith@gmail.com', true, 'USER'),
-	(2, 'test1', 'test1', 'Michael', 'Smith', 22, 'michael.smith@gmail.com', true, 'USER'),
-	(3, 'test2', 'test2', 'Jane', 'Sheperd', 20, 'jane.sheperd@gmail.com', true, 'USER'),
-	(4, 'test3', 'test3', 'John', 'Cooper', 20, 'jane.sheperd@gmail.com', true, 'USER');
+INSERT INTO Users (Username, Password, Firstname, Lastname, Age, Email, Enabled) VALUES
+	('user', 'user', 'John', 'Smith', 23, 'john.smith@gmail.com', true),
+	('test1', 'test1', 'Michael', 'Smith', 22, 'michael.smith@gmail.com', true),
+	('test2', 'test2', 'Jane', 'Sheperd', 20, 'jane.sheperd@gmail.com', true),
+	('test3', 'test3', 'John', 'Cooper', 20, 'jane.sheperd@gmail.com', true);
+
+INSERT INTO UserRoles(ID, Username, Role) VALUES
+	(1, 'user', 'USER'),
+	(2, 'test1', 'USER'),
+	(3, 'test2', 'USER'),
+	(4, 'test3', 'USER');
 
 INSERT INTO Cinemas (ID, Address, Name) VALUES
 	(1, '3525. Miskolc, Miskolc Pláza, Szentpáli út 2-4.', 'Cinema City Miskolc'),

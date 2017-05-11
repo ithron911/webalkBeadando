@@ -2,7 +2,6 @@ package hu.iit.uni.miskolc.nemeth.webdev.model;
 
 public class User {
 
-	private int id;
 	private String username;
 	private String password;
 	private String firstname;
@@ -12,14 +11,6 @@ public class User {
 	private boolean enabled;
 
 	public User() {
-	}
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
 	}
 
 	public String getUsername() {
