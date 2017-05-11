@@ -21,7 +21,7 @@ public final class ShowConverter {
 		return showResponses;
 	}
 
-	private static ShowResponse convertShowModelToResponse(Show show) {
+	public static ShowResponse convertShowModelToResponse(Show show) {
 		ShowResponse showResponse = new ShowResponse();
 		showResponse.setId(show.getId());
 		showResponse.setDate(show.getDate());

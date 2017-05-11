@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import hu.iit.uni.miskolc.nemeth.webdev.controller.converter.TicketConverter;
 import hu.iit.uni.miskolc.nemeth.webdev.controller.model.TicketRequest;
+import hu.iit.uni.miskolc.nemeth.webdev.controller.model.TicketResponse;
 import hu.iit.uni.miskolc.nemeth.webdev.model.Ticket;
 import hu.iit.uni.miskolc.nemeth.webdev.service.TicketService;
 import hu.iit.uni.miskolc.nemeth.webdev.service.exception.InvalidTicketResourcesException;
@@ -30,7 +32,9 @@ public class TicketController {
 	}
 
 	@RequestMapping(value = "/getTicketsByUserId/{userId}", method = RequestMethod.GET)
-	List<Ticket> getTicketsByUserId(@PathVariable("userId") int userId) {
-		return this.ticketService.getTicketsByUserId(userId);
+	List<TicketResponse> getTicketsByUserId(@PathVariable("userId") int userId) {
+		List<Ticket> tickets = this.ticketService.getTicketsByUserId(userId);
+
+		return TicketConverter.convertTicketModelssToTicketResponses(tickets);
 	}
 }
