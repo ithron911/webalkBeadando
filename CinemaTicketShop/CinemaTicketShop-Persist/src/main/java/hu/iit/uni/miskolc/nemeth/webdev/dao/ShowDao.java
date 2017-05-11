@@ -5,5 +5,5 @@ import java.util.List;
 import hu.iit.uni.miskolc.nemeth.webdev.model.Show;
 
 public interface ShowDao {
-	List<Show> listShowsByMovieAndCinemaId(int movieId, int cinemaId);
+	List<Show> listShowsByMovie(int movieId);
 }

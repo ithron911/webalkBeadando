@@ -19,8 +19,8 @@ public class ShowServiceImpl implements ShowService {
 	}
 
 	@Override
-	public List<Show> listShowsByMovieAndCinemaId(int movieId, int cinemaId) {
-		return this.showDao.listShowsByMovieAndCinemaId(movieId, cinemaId);
+	public List<Show> listShowsByMovie(int movieId) {
+		return this.showDao.listShowsByMovie(movieId);
 	}
 
 }

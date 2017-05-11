@@ -46,10 +46,10 @@ INSERT INTO Seats (ID, RowNumber, SeatNumber, IsTaken, ScreeningRoomID) VALUES
 	(20, 1, 5, true, 4);	
 
 INSERT INTO Shows (ID, ScreeningRoomID, MovieID, Date) VALUES
-	(1, 1, 1, "1494583200"),
-	(2, 2, 4, "1494586800"),
-	(3, 3, 2, "1494586800"),
-	(4, 4, 3, "1494583200");
+	(1, 1, 1, "2017-05-12 10:00:00"),
+	(2, 2, 4, "2017-05-12 12:00:00"),
+	(3, 3, 2, "2017-05-12 10:00:00"),
+	(4, 4, 3, "2017-05-12 12:00:00");
 
 INSERT INTO Tickets (ID, UserID, ShowID, SeatID) VALUES
 	(1, 2, 1, 3),

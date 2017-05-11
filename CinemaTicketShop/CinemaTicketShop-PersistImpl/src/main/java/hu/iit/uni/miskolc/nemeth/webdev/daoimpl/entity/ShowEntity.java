@@ -4,6 +4,7 @@ import java.sql.Timestamp;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -20,11 +21,11 @@ public class ShowEntity {
 	@Column(name = "ID")
 	private int id;
 
-	@OneToOne
+	@OneToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "ScreeningRoomID")
 	private ScreeningRoomEntity screeningRoom;
 
-	@OneToOne
+	@OneToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "MovieID")
 	private MovieEntity movie;
 

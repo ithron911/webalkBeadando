@@ -1,12 +1,9 @@
 package hu.iit.uni.miskolc.nemeth.webdev.model;
 
-import java.util.List;
-
 public class ScreeningRoom {
 
 	private int id;
 	private Cinema cinema;
-	private List<Seat> seats;
 
 	public ScreeningRoom() {
 	}
@@ -25,13 +22,5 @@ public class ScreeningRoom {
 
 	public void setCinema(Cinema cinema) {
 		this.cinema = cinema;
-	}
-
-	public List<Seat> getSeats() {
-		return seats;
-	}
-
-	public void setSeats(List<Seat> seats) {
-		this.seats = seats;
 	}
 }

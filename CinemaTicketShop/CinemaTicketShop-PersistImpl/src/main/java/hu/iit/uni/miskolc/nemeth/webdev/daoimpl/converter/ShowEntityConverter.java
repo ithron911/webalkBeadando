@@ -1,6 +1,7 @@
 package hu.iit.uni.miskolc.nemeth.webdev.daoimpl.converter;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import hu.iit.uni.miskolc.nemeth.webdev.daoimpl.entity.ShowEntity;
@@ -25,10 +26,9 @@ public final class ShowEntityConverter {
 		Show show = new Show();
 		show.setId(showEntity.getId());
 		show.setScreeningRoom(ScreeningRoomEntityConverter.convertScreeningRoomEntityToModel(showEntity.getScreeningRoom()));
-		show.setDate(showEntity.getDate());
+		show.setDate(new Date(showEntity.getDate().getTime()));
 		show.setMovie(MovieEntityConverter.convertMovieEntityToModels(showEntity.getMovie()));
 		
-
 		return show;
 	}
 }
