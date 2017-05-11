@@ -3,6 +3,7 @@ package hu.iit.uni.miskolc.nemeth.webdev.controller;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 import hu.iit.uni.miskolc.nemeth.webdev.controller.model.ErrorResponse;
@@ -15,7 +16,8 @@ public class ExceptionHandlerController {
 
 	@ResponseStatus(value = HttpStatus.BAD_REQUEST)
 	@ExceptionHandler(InvalidTicketResourcesException.class)
-	public ErrorResponse invalidTicketResource() {
+	@ResponseBody ErrorResponse
+	invalidTicketResource() {
 		ErrorResponse errorResponse = new ErrorResponse();
 		errorResponse.setMessage("Ticket could not be created.");
 		errorResponse.setReason("One of the tickets components does not exists!");
@@ -25,7 +27,8 @@ public class ExceptionHandlerController {
 
 	@ResponseStatus(value = HttpStatus.BAD_REQUEST)
 	@ExceptionHandler(SeatBookedException.class)
-	public ErrorResponse seatBooked() {
+	@ResponseBody ErrorResponse
+	seatBooked() {
 		ErrorResponse errorResponse = new ErrorResponse();
 		errorResponse.setMessage("Ticket buy failed!");
 		errorResponse.setReason("The seat is already taken!");
@@ -35,7 +38,8 @@ public class ExceptionHandlerController {
 
 	@ResponseStatus(value = HttpStatus.BAD_REQUEST)
 	@ExceptionHandler(UserNotExistsException.class)
-	public ErrorResponse userNotExists() {
+	@ResponseBody ErrorResponse
+	userNotExists() {
 		ErrorResponse errorResponse = new ErrorResponse();
 		errorResponse.setMessage("Loading of user failed!");
 		errorResponse.setReason("The user does not exists!");
@@ -45,7 +49,8 @@ public class ExceptionHandlerController {
 
 	@ResponseStatus(value = HttpStatus.INTERNAL_SERVER_ERROR)
 	@ExceptionHandler(Exception.class)
-	public ErrorResponse exception(Exception e) {
+	@ResponseBody ErrorResponse
+	exception(Exception e) {
 		ErrorResponse errorResponse = new ErrorResponse();
 		errorResponse.setMessage("Internal server error occured.");
 		errorResponse.setReason(null);
