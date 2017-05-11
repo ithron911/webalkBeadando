@@ -4,7 +4,4 @@ import org.springframework.security.web.context.AbstractSecurityWebApplicationIn
 
 public class SecurityWebAppInitializer extends AbstractSecurityWebApplicationInitializer {
 
-	 public SecurityWebAppInitializer() {
-        super(SecurityConfiguration.class);
-    }
 }

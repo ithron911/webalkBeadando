@@ -13,7 +13,7 @@ import hu.iit.uni.miskolc.nemeth.webdev.serviceimpl.configuration.ServiceApplica
 @EnableWebMvc
 @Configuration
 @ComponentScan("hu.iit.uni.miskolc.nemeth.webdev.controller")
-@Import({DaoApplicationContextConfig.class, ServiceApplicationContextConfig.class})
+@Import({SecurityConfiguration.class, DaoApplicationContextConfig.class, ServiceApplicationContextConfig.class})
 public class WebAppConfiguration extends WebMvcConfigurerAdapter{
 
 	@Override

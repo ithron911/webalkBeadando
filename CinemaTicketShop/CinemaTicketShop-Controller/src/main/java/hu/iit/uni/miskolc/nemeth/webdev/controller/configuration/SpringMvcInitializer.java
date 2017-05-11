@@ -2,16 +2,15 @@ package hu.iit.uni.miskolc.nemeth.webdev.controller.configuration;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
-public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
-
+public class SpringMvcInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 	@Override
 	protected Class<?>[] getRootConfigClasses() {
-		return null;
+		return new Class[] { WebAppConfiguration.class };
 	}
 
 	@Override
 	protected Class<?>[] getServletConfigClasses() {
-		return new Class< ? >[] { WebAppConfiguration.class };
+		return null;
 	}
 
 	@Override
