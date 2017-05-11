@@ -17,6 +17,8 @@ public final class UserEntityConverter {
 		user.setLastname(userEntity.getLastname());
 		user.setUsername(userEntity.getUsername());
 		user.setPassword(userEntity.getPassword());
+		user.setEnabled(userEntity.isEnabled());
+		user.setRole(userEntity.getRole());
 
 		return user;
 	}

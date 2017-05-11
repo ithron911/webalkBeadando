@@ -34,6 +34,12 @@ public class UserEntity {
 	@Column(name = "Email")
 	private String email;
 
+	@Column(name = "Enabled")
+	private boolean enabled;
+
+	@Column(name = "Role")
+	private String role;
+
 	public UserEntity() {
 	}
 
@@ -91,5 +97,21 @@ public class UserEntity {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public boolean isEnabled() {
+		return enabled;
+	}
+
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
+	}
+
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
 	}
 }

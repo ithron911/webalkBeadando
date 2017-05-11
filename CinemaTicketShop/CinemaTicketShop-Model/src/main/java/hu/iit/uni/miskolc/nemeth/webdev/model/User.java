@@ -9,6 +9,8 @@ public class User {
 	private String lastname;
 	private int age;
 	private String email;
+	private boolean enabled;
+	private String role;
 
 	public User() {
 	}
@@ -68,4 +70,22 @@ public class User {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
+	public boolean isEnabled() {
+		return enabled;
+	}
+
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
+	}
+
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
+
+	
 }
