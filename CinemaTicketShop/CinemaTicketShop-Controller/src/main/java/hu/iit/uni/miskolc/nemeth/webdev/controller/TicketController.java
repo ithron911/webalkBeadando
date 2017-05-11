@@ -29,7 +29,7 @@ public class TicketController {
 		this.ticketService.buyTicket(ticketRequest.getUserId(), ticketRequest.getShowId(), ticketRequest.getSeatId());
 	}
 
-	@RequestMapping(value = "/buyTicket/{userId}", method = RequestMethod.POST)
+	@RequestMapping(value = "/buyTicket/{userId}", method = RequestMethod.GET)
 	List<Ticket> getTicketsByUserId(@PathVariable("userId") int userId) {
 		return this.ticketService.getTicketsByUserId(userId);
 	}
