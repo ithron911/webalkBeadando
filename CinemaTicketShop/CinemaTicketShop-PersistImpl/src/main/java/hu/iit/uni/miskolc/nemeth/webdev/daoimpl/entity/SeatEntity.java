@@ -22,7 +22,7 @@ public class SeatEntity {
 	@Column(name = "RowNumber")
 	private int rowNumber;
 
-	@Column(name = "SeatNumber;")
+	@Column(name = "SeatNumber")
 	private int seatNumber;
 
 	@Column(name = "IsTaken")
