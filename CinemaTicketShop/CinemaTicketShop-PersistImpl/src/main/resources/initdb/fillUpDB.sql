@@ -57,13 +57,13 @@ INSERT INTO Shows (ID, ScreeningRoomID, MovieID, Date) VALUES
 	(3, 3, 2, "2017-05-12 10:00:00"),
 	(4, 4, 3, "2017-05-12 12:00:00");
 
-INSERT INTO Tickets (ID, UserID, ShowID, SeatID) VALUES
-	(1, 2, 1, 3),
-	(2, 2, 1, 4),
-	(3, 3, 2, 8),
-	(4, 3, 2, 9),
-	(5, 4, 4, 16),
-	(6, 4, 4, 17),
-	(7, 4, 4, 18),
-	(8, 4, 4, 19),
-	(9, 4, 4, 20);
+INSERT INTO Tickets (ID, Username, ShowID, SeatID) VALUES
+	(1, 'test1', 1, 3),
+	(2, 'test1', 1, 4),
+	(3, 'test2', 2, 8),
+	(4, 'test2', 2, 9),
+	(5, 'test3', 4, 16),
+	(6, 'test3', 4, 17),
+	(7, 'test3', 4, 18),
+	(8, 'test3', 4, 19),
+	(9, 'test3', 4, 20);
