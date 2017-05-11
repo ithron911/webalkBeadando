@@ -42,4 +42,15 @@ public class ExceptionHandlerController {
 
 		return errorResponse;
 	}
+
+	@ResponseStatus(value = HttpStatus.INTERNAL_SERVER_ERROR)
+	@ExceptionHandler(Exception.class)
+	public ErrorResponse exception(Exception e) {
+		ErrorResponse errorResponse = new ErrorResponse();
+		errorResponse.setMessage("Internal server error occured.");
+		errorResponse.setReason(null);
+
+		e.printStackTrace();
+		return errorResponse;
+	}
 }
