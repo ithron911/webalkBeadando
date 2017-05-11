@@ -19,11 +19,11 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public User getUserByLoginDatas(String username, String password) throws UserNotExistsException {
+	public User getUserByLoginDatas(String username) throws UserNotExistsException {
 		User user = null;
 
 		try {
-			user = this.userDao.getUserByLoginDatas(username, password);
+			user = this.userDao.getUserByLoginDatas(username);
 		} catch (InvalidUserException e) {
 			throw new UserNotExistsException();
 		}
@@ -32,9 +32,9 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public void modifyUser(User user) throws UserNotExistsException {
+	public void modifyUser(String username, String firstname, String lastname, int age, String email) throws UserNotExistsException {
 		try {
-			this.userDao.modifyUser(user);
+			this.userDao.modifyUser(username, firstname, lastname, age, email);
 		} catch (InvalidUserException e) {
 			throw new UserNotExistsException();
 		}

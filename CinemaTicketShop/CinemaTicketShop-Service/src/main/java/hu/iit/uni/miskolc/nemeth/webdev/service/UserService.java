@@ -4,9 +4,9 @@ import hu.iit.uni.miskolc.nemeth.webdev.model.User;
 import hu.iit.uni.miskolc.nemeth.webdev.service.exception.UserNotExistsException;
 
 public interface UserService {
-	User getUserByLoginDatas(String username, String password) throws UserNotExistsException;
+	User getUserByLoginDatas(String username) throws UserNotExistsException;
 
-	void modifyUser(User user) throws UserNotExistsException;
+	void modifyUser(String username, String firstname, String lastname, int age, String email) throws UserNotExistsException;
 
 	User getUserByUsername(String username) throws UserNotExistsException;
 }

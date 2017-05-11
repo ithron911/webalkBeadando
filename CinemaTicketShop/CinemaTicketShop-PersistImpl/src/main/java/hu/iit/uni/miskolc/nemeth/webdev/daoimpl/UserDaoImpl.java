@@ -2,7 +2,6 @@ package hu.iit.uni.miskolc.nemeth.webdev.daoimpl;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.TypedQuery;
 import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Repository;
@@ -24,26 +23,28 @@ public class UserDaoImpl implements UserDao {
 	}
 
 	@Override
-	public User getUserByLoginDatas(String username, String password) throws InvalidUserException {
-		String select = "SELECT u FROM User u WHERE u.username = :username AND u.password = :password";
-		TypedQuery<UserEntity> query = this.entityManager.createQuery(select, UserEntity.class);
-		query.setParameter("username", username);
-		query.setParameter("password", password);
+	public User getUserByLoginDatas(String username) throws InvalidUserException {
+		UserEntity userEntity = this.entityManager.find(UserEntity.class, username);
+		User user = null;
+		
+		if (userEntity != null) {
+			user = UserEntityConverter.convertUserEntityToModel(userEntity);
+		} else {
+			throw new InvalidUserException();
+		}
 
-		UserEntity userEntity = query.getSingleResult();
-
-		return UserEntityConverter.convertUserEntityToModel(userEntity);
+		return user;
 	}
 
 	@Override
-	public void modifyUser(User userDTO) throws InvalidUserException {
-		UserEntity userEntity = this.entityManager.find(UserEntity.class, userDTO.getUsername());
+	public void modifyUser(String username, String firstname, String lastname, int age, String email) throws InvalidUserException {
+		UserEntity userEntity = this.entityManager.find(UserEntity.class, username);
 
 		if (userEntity != null) {
-			userEntity.setAge(userDTO.getAge());
-			userEntity.setEmail(userDTO.getEmail());
-			userEntity.setFirstname(userDTO.getFirstname());
-			userEntity.setLastname(userDTO.getLastname());
+			userEntity.setAge(age);
+			userEntity.setEmail(email);
+			userEntity.setFirstname(firstname);
+			userEntity.setLastname(lastname);
 
 			this.entityManager.merge(userEntity);
 		} else {
