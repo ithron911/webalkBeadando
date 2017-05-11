@@ -3,6 +3,9 @@ package hu.iit.uni.miskolc.nemeth.webdev.daoimpl;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
+import javax.transaction.Transactional;
+
+import org.springframework.stereotype.Repository;
 
 import hu.iit.uni.miskolc.nemeth.webdev.dao.UserDao;
 import hu.iit.uni.miskolc.nemeth.webdev.dao.exception.InvalidUserException;
@@ -10,6 +13,8 @@ import hu.iit.uni.miskolc.nemeth.webdev.daoimpl.converter.UserEntityConverter;
 import hu.iit.uni.miskolc.nemeth.webdev.daoimpl.entity.UserEntity;
 import hu.iit.uni.miskolc.nemeth.webdev.model.User;
 
+@Repository
+@Transactional
 public class UserDaoImpl implements UserDao {
 
 	@PersistenceContext

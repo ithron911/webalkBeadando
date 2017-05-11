@@ -8,11 +8,12 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 import hu.iit.uni.miskolc.nemeth.webdev.daoimpl.configuration.DaoApplicationContextConfig;
+import hu.iit.uni.miskolc.nemeth.webdev.serviceimpl.configuration.ServiceApplicationContextConfig;
 
 @EnableWebMvc
 @Configuration
 @ComponentScan("hu.iit.uni.miskolc.nemeth.webdev.controller")
-@Import(DaoApplicationContextConfig.class)
+@Import({DaoApplicationContextConfig.class, ServiceApplicationContextConfig.class})
 public class WebAppConfiguration extends WebMvcConfigurerAdapter{
 
 	@Override
