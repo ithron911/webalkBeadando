@@ -12,7 +12,6 @@ import hu.iit.uni.miskolc.nemeth.webdev.model.Seat;
 import hu.iit.uni.miskolc.nemeth.webdev.service.SeatService;
 
 @RestController
-@RequestMapping(value = "/seats")
 public class SeatController {
 
 	@Autowired

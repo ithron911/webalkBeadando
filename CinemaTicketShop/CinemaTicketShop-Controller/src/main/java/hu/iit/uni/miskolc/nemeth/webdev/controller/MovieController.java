@@ -12,7 +12,6 @@ import hu.iit.uni.miskolc.nemeth.webdev.model.Movie;
 import hu.iit.uni.miskolc.nemeth.webdev.service.MovieService;
 
 @RestController
-@RequestMapping(value = "/movies")
 public class MovieController {
 
 	@Autowired

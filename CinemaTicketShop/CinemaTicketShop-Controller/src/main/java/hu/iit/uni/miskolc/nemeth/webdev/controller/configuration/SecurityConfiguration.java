@@ -26,14 +26,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-
 	    http.authorizeRequests()
 		    .antMatchers("/").permitAll()
-			.antMatchers("/movies/**").access("hasRole('USER')")
-			.antMatchers("/seats/**").access("hasRole('USER')")
-			.antMatchers("/shows/**").access("hasRole('USER')")
-			.antMatchers("/tickets/**").access("hasRole('USER')")
-			.antMatchers("/users/**").access("hasRole('USER')")
+			.antMatchers("/**").access("hasRole('ROLE_USER')")
 			.and()
 				.formLogin().loginProcessingUrl("/login")
 				.usernameParameter("username")
