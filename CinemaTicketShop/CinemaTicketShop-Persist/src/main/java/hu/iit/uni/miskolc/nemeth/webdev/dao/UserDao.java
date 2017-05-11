@@ -8,5 +8,5 @@ public interface UserDao {
 
 	void modifyUser(User user) throws InvalidUserException;
 
-	User getUSerById(int userId) throws InvalidUserException;
+	User getUserById(int userId) throws InvalidUserException;
 }

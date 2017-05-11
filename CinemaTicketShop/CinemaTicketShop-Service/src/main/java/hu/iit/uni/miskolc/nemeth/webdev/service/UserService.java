@@ -7,4 +7,6 @@ public interface UserService {
 	User getUserByLoginDatas(String username, String password) throws UserNotExistsException;
 
 	void modifyUser(User user) throws UserNotExistsException;
+
+	User getUserByUserId(int userId) throws UserNotExistsException;
 }

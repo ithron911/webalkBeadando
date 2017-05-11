@@ -40,4 +40,17 @@ public class UserServiceImpl implements UserService {
 		}
 	}
 
+	@Override
+	public User getUserByUserId(int userId) throws UserNotExistsException {
+		User user = null;
+
+		try {
+			user = this.userDao.getUserById(userId);
+		} catch (InvalidUserException e) {
+			throw new UserNotExistsException();
+		}
+
+		return user;
+	}
+
 }

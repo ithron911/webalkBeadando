@@ -52,7 +52,7 @@ public class UserDaoImpl implements UserDao {
 	}
 
 	@Override
-	public User getUSerById(int userId) throws InvalidUserException {
+	public User getUserById(int userId) throws InvalidUserException {
 		UserEntity userEntity = this.entityManager.find(UserEntity.class, userId);
 		User user = null;
 
