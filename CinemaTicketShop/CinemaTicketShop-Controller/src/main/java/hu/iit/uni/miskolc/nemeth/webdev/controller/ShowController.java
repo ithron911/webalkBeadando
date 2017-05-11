@@ -14,6 +14,7 @@ import hu.iit.uni.miskolc.nemeth.webdev.model.Show;
 import hu.iit.uni.miskolc.nemeth.webdev.service.ShowService;
 
 @RestController
+@RequestMapping(value = "shows")
 public class ShowController {
 
 	@Autowired

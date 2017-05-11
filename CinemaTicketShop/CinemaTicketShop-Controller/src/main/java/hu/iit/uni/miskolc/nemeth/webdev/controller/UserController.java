@@ -12,6 +12,7 @@ import hu.iit.uni.miskolc.nemeth.webdev.service.UserService;
 import hu.iit.uni.miskolc.nemeth.webdev.service.exception.UserNotExistsException;
 
 @RestController
+@RequestMapping(value = "/users")
 public class UserController {
 
 	@Autowired

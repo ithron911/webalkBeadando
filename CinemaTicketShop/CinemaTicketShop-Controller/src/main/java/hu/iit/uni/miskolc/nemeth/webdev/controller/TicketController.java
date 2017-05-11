@@ -18,6 +18,7 @@ import hu.iit.uni.miskolc.nemeth.webdev.service.exception.InvalidTicketResources
 import hu.iit.uni.miskolc.nemeth.webdev.service.exception.SeatBookedException;
 
 @RestController
+@RequestMapping(value = "tickets")
 public class TicketController {
 
 	@Autowired

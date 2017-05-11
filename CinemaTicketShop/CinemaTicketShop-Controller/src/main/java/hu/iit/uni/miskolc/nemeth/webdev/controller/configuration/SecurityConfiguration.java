@@ -29,7 +29,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 	    http.authorizeRequests()
 		    .antMatchers("/").permitAll()
-			.antMatchers("/movies/**").access("hasRole('ADMIN')")
+			.antMatchers("/movies/**").access("hasRole('USER')")
+			.antMatchers("/seats/**").access("hasRole('USER')")
+			.antMatchers("/shows/**").access("hasRole('USER')")
+			.antMatchers("/tickets/**").access("hasRole('USER')")
+			.antMatchers("/users/**").access("hasRole('USER')")
 			.and()
 				.formLogin().loginProcessingUrl("/login")
 				.usernameParameter("username")
