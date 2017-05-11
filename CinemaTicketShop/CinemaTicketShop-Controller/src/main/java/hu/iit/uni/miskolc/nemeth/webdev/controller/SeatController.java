@@ -10,8 +10,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import hu.iit.uni.miskolc.nemeth.webdev.model.Seat;
 import hu.iit.uni.miskolc.nemeth.webdev.service.SeatService;
-import hu.iit.uni.miskolc.nemeth.webdev.service.exception.SeatBookedException;
-import hu.iit.uni.miskolc.nemeth.webdev.service.exception.SeatNotExistsException;
 
 @RestController
 public class SeatController {
@@ -20,11 +18,6 @@ public class SeatController {
 	private SeatService seatService;
 
 	public SeatController() {
-	}
-
-	@RequestMapping(value = "/bookSeat/{seatId}", method = RequestMethod.POST)
-	public void bookSeat(@PathVariable("seatId") int seatId) throws SeatBookedException, SeatNotExistsException {
-		this.seatService.bookSeat(seatId);
 	}
 
 	@RequestMapping(value = "/listSeatsByShow/{showId}", method = RequestMethod.GET)
