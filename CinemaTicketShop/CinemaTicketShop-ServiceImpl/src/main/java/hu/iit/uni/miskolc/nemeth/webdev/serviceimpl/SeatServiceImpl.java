@@ -40,4 +40,17 @@ public class SeatServiceImpl implements SeatService {
 		return this.seatDao.listSeatsByShowId(showId);
 	}
 
+	@Override
+	public Seat getSeatById(int seatId) throws SeatNotExistsException {
+		Seat seat = null;
+
+		try {
+			seat = this.seatDao.getSeatById(seatId);
+		} catch (InvalidSeatException e) {
+			throw new SeatNotExistsException();
+		}
+
+		return seat;
+	}
+
 }

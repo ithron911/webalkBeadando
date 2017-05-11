@@ -10,4 +10,6 @@ public interface SeatService {
 	void bookSeat(int seatId) throws SeatBookedException, SeatNotExistsException;
 
 	List<Seat> listSeatsByShow(int showId);
+
+	Seat getSeatById(int seatId) throws SeatNotExistsException;
 }
