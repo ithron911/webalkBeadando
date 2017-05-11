@@ -34,10 +34,9 @@ public class MovieDaoImpl implements MovieDao {
 
 		return MovieEntityConverter.convertMovieEntitiesToModels(movieEntities);
 	}
-
 	@Override
 	public List<Movie> listMoviesByCinema(int cinemaId) {
-		String select = "SELECT m FROM Movie m WHERE m.cinema.id = :cinemaId";
+		String select = "SELECT DISTINCT(s.movie) FROM Show s WHERE s.screeningRoom.cinema.id = :cinemaId";
 		TypedQuery<MovieEntity> query = this.entityManager.createQuery(select, MovieEntity.class);
 		query.setParameter("cinemaId", cinemaId);
 
@@ -45,5 +44,4 @@ public class MovieDaoImpl implements MovieDao {
 
 		return MovieEntityConverter.convertMovieEntitiesToModels(movieEntities);
 	}
-
 }

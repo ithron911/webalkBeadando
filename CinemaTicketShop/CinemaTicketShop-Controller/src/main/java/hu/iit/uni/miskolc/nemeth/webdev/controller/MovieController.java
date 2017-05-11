@@ -29,4 +29,9 @@ public class MovieController {
 	public List<Movie> listMoviesByGenre(@PathVariable("genre") String genre) {
 		return this.movieService.listMoviesByGenre(genre);
 	}
+
+	@RequestMapping(value = "/listMoviesByCinema/{cinemaId}", method = RequestMethod.GET)
+	public List<Movie> listMoviesByCinema(@PathVariable("cinemaId") int cinemaId) {
+		return this.movieService.listMoviesByCinema(cinemaId);
+	}
 }
