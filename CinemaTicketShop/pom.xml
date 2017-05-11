@@ -28,6 +28,7 @@
 		<module>CinemaTicketShop-PersistImpl</module>
 		<module>CinemaTicketShop-Controller</module>
 		<module>CinemaTicketShop-Service</module>
+		<module>CinemaTicketShop-ServiceImpl</module>
 	</modules>
 
   <build>
