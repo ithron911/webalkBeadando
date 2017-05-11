@@ -15,6 +15,8 @@ public final class UserEntityConverter {
 		user.setEmail(userEntity.getEmail());
 		user.setFirstname(userEntity.getFirstname());
 		user.setLastname(userEntity.getLastname());
+		user.setUsername(userEntity.getUsername());
+		user.setPassword(userEntity.getPassword());
 
 		return user;
 	}
