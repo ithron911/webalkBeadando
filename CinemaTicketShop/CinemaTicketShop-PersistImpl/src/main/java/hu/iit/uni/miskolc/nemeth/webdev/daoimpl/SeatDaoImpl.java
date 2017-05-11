@@ -39,10 +39,11 @@ public class SeatDaoImpl implements SeatDao {
 	}
 
 	@Override
-	public List<Seat> listSeatsByScreeningRoom(int screeningRoomId) {
-		String select = "SELECT s FROM Seat s WHERE s.screeningRoom.id = :screeningRoomId";
+	public List<Seat> listSeatsByShowId(int showId) {
+		String select = "SELECT s FROM Seat s WHERE "
+			+ "s.screeningRoom.id = (SELECT show.screeningRoom.id FROM Show show WHERE show.id = :showId)";
 		TypedQuery<SeatEntity> query = this.entityManager.createQuery(select, SeatEntity.class);
-		query.setParameter("screeningRoomId", screeningRoomId);
+		query.setParameter("showId", showId);
 
 		List<SeatEntity> seatEntities = query.getResultList();
 

@@ -36,8 +36,8 @@ public class SeatServiceImpl implements SeatService {
 	}
 
 	@Override
-	public List<Seat> listSeatsByScreeningRoom(int screeningRoomId) {
-		return this.seatDao.listSeatsByScreeningRoom(screeningRoomId);
+	public List<Seat> listSeatsByShow(int showId) {
+		return this.seatDao.listSeatsByShowId(showId);
 	}
 
 }

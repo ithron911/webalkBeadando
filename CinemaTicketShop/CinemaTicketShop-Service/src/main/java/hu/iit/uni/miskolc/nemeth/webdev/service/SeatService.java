@@ -9,5 +9,5 @@ import hu.iit.uni.miskolc.nemeth.webdev.service.exception.SeatNotExistsException
 public interface SeatService {
 	void bookSeat(int seatId) throws SeatBookedException, SeatNotExistsException;
 
-	List<Seat> listSeatsByScreeningRoom(int screeningRoomId);
+	List<Seat> listSeatsByShow(int showId);
 }

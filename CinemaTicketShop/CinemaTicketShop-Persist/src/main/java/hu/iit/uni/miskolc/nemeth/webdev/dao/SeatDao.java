@@ -8,7 +8,7 @@ import hu.iit.uni.miskolc.nemeth.webdev.model.Seat;
 public interface SeatDao {
 	void bookSeat(int seatId) throws InvalidSeatException;
 
-	List<Seat> listSeatsByScreeningRoom(int screeningRoomId);
+	List<Seat> listSeatsByShowId(int showId);
 
 	boolean isSeatTaken(int seatId) throws InvalidSeatException;
 }
