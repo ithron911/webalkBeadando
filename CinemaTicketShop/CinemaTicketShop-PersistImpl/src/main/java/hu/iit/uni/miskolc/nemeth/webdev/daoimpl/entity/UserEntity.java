@@ -37,9 +37,6 @@ public class UserEntity {
 	@Column(name = "Enabled")
 	private boolean enabled;
 
-	@Column(name = "Role")
-	private String role;
-
 	public UserEntity() {
 	}
 
@@ -105,13 +102,5 @@ public class UserEntity {
 
 	public void setEnabled(boolean enabled) {
 		this.enabled = enabled;
-	}
-
-	public String getRole() {
-		return role;
-	}
-
-	public void setRole(String role) {
-		this.role = role;
 	}
 }
