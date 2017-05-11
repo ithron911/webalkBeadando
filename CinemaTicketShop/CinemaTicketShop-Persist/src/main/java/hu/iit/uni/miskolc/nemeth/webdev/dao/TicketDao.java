@@ -2,10 +2,10 @@ package hu.iit.uni.miskolc.nemeth.webdev.dao;
 
 import java.util.List;
 
-import hu.iit.uni.miskolc.nemeth.webdev.dao.dto.TicketDTO;
+import hu.iit.uni.miskolc.nemeth.webdev.model.Ticket;
 
 public interface TicketDao {
-	void buyTicket(TicketDTO ticketDTO);
+	void buyTicket(Ticket ticket);
 
-	List<TicketDTO> getTicketsByUserId(int userId);
+	List<Ticket> getTicketsByUserId(int userId);
 }

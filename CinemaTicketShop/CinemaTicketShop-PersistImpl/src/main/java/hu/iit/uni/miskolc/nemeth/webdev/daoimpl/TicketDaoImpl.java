@@ -10,12 +10,12 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import hu.iit.uni.miskolc.nemeth.webdev.dao.TicketDao;
-import hu.iit.uni.miskolc.nemeth.webdev.dao.dto.TicketDTO;
 import hu.iit.uni.miskolc.nemeth.webdev.daoimpl.converter.TicketEntityConverter;
 import hu.iit.uni.miskolc.nemeth.webdev.daoimpl.entity.SeatEntity;
 import hu.iit.uni.miskolc.nemeth.webdev.daoimpl.entity.ShowEntity;
 import hu.iit.uni.miskolc.nemeth.webdev.daoimpl.entity.TicketEntity;
 import hu.iit.uni.miskolc.nemeth.webdev.daoimpl.entity.UserEntity;
+import hu.iit.uni.miskolc.nemeth.webdev.model.Ticket;
 
 @Repository
 @Transactional
@@ -28,10 +28,10 @@ public class TicketDaoImpl implements TicketDao {
 	}
 
 	@Override
-	public void buyTicket(TicketDTO ticketDTO) {
+	public void buyTicket(Ticket ticketDTO) {
 		ShowEntity showEntity = this.entityManager.find(ShowEntity.class, ticketDTO.getShow().getId());
 		UserEntity userEntity = this.entityManager.find(UserEntity.class, ticketDTO.getUser().getId());
-		SeatEntity seatEntity = this.entityManager.find(SeatEntity.class, ticketDTO.getSeatDTO().getId());
+		SeatEntity seatEntity = this.entityManager.find(SeatEntity.class, ticketDTO.getSeat().getId());
 
 		TicketEntity ticketEntity = new TicketEntity();
 		ticketEntity.setShow(showEntity);
@@ -42,13 +42,13 @@ public class TicketDaoImpl implements TicketDao {
 	}
 
 	@Override
-	public List<TicketDTO> getTicketsByUserId(int userId) {
+	public List<Ticket> getTicketsByUserId(int userId) {
 		String select = "SELECT t from Ticket t WHERE t.user.id = :userId";
 		TypedQuery<TicketEntity> query = this.entityManager.createQuery(select, TicketEntity.class);
 		query.setParameter("userId", userId);
 
 		List<TicketEntity> ticketEntities = query.getResultList();
-		return TicketEntityConverter.convertTicketEntitiesToDTOs(ticketEntities);
+		return TicketEntityConverter.convertTicketEntitiesToModels(ticketEntities);
 	}
 
 }

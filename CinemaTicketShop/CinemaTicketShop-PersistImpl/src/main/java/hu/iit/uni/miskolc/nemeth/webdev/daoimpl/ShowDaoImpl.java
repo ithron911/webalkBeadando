@@ -10,9 +10,9 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import hu.iit.uni.miskolc.nemeth.webdev.dao.ShowDao;
-import hu.iit.uni.miskolc.nemeth.webdev.dao.dto.ShowDTO;
 import hu.iit.uni.miskolc.nemeth.webdev.daoimpl.converter.ShowEntityConverter;
 import hu.iit.uni.miskolc.nemeth.webdev.daoimpl.entity.ShowEntity;
+import hu.iit.uni.miskolc.nemeth.webdev.model.Show;
 
 @Repository
 @Transactional
@@ -25,7 +25,7 @@ public class ShowDaoImpl implements ShowDao {
 	}
 
 	@Override
-	public List<ShowDTO> listShowsByMovieAndCinemaId(int movieId, int cinemaId) {
+	public List<Show> listShowsByMovieAndCinemaId(int movieId, int cinemaId) {
 		String select = "SELECT s FROM Show s WHERE s.movie.id = :movieId AND s.cinema.id = :cinemaId";
 		TypedQuery<ShowEntity> query = this.entityManager.createQuery(select, ShowEntity.class);
 		query.setParameter("movieId", movieId);
@@ -33,7 +33,7 @@ public class ShowDaoImpl implements ShowDao {
 
 		List<ShowEntity> showEntities = query.getResultList();
 
-		return ShowEntityConverter.convertShowEntitiesToDTOs(showEntities);
+		return ShowEntityConverter.convertShowEntitiesToModels(showEntities);
 	}
 
 }

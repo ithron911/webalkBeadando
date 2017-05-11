@@ -5,10 +5,10 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 
 import hu.iit.uni.miskolc.nemeth.webdev.dao.UserDao;
-import hu.iit.uni.miskolc.nemeth.webdev.dao.dto.UserDTO;
 import hu.iit.uni.miskolc.nemeth.webdev.dao.exception.InvalidUserException;
 import hu.iit.uni.miskolc.nemeth.webdev.daoimpl.converter.UserEntityConverter;
 import hu.iit.uni.miskolc.nemeth.webdev.daoimpl.entity.UserEntity;
+import hu.iit.uni.miskolc.nemeth.webdev.model.User;
 
 public class UserDaoImpl implements UserDao {
 
@@ -19,7 +19,7 @@ public class UserDaoImpl implements UserDao {
 	}
 
 	@Override
-	public UserDTO getUserByLoginDatas(String username, String password) throws InvalidUserException {
+	public User getUserByLoginDatas(String username, String password) throws InvalidUserException {
 		String select = "SELECT u FROM User u WHERE u.username = :username AND u.password = :password";
 		TypedQuery<UserEntity> query = this.entityManager.createQuery(select, UserEntity.class);
 		query.setParameter("username", username);
@@ -27,11 +27,11 @@ public class UserDaoImpl implements UserDao {
 
 		UserEntity userEntity = query.getSingleResult();
 
-		return UserEntityConverter.convertUserEntityToDTO(userEntity);
+		return UserEntityConverter.convertUserEntityToModel(userEntity);
 	}
 
 	@Override
-	public void modifyUser(UserDTO userDTO) throws InvalidUserException {
+	public void modifyUser(User userDTO) throws InvalidUserException {
 		UserEntity userEntity = this.entityManager.find(UserEntity.class, userDTO.getId());
 
 		if (userEntity != null) {

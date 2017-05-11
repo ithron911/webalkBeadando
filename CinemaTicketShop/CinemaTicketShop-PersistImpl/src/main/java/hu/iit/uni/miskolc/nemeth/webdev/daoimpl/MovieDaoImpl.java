@@ -10,9 +10,9 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import hu.iit.uni.miskolc.nemeth.webdev.dao.MovieDao;
-import hu.iit.uni.miskolc.nemeth.webdev.dao.dto.MovieDTO;
 import hu.iit.uni.miskolc.nemeth.webdev.daoimpl.converter.MovieEntityConverter;
 import hu.iit.uni.miskolc.nemeth.webdev.daoimpl.entity.MovieEntity;
+import hu.iit.uni.miskolc.nemeth.webdev.model.Movie;
 
 @Repository
 @Transactional
@@ -24,25 +24,25 @@ public class MovieDaoImpl implements MovieDao {
 	public MovieDaoImpl() {
 	}
 	@Override
-	public List<MovieDTO> listMoviesByGenre(String genre) {
+	public List<Movie> listMoviesByGenre(String genre) {
 		String select = "SELECT m FROM Movie m WHERE m.genre = :genre";
 		TypedQuery<MovieEntity> query = this.entityManager.createQuery(select, MovieEntity.class);
 		query.setParameter("genre", genre);
 
 		List<MovieEntity> movieEntities = query.getResultList();
 
-		return MovieEntityConverter.convertMovieEntitiesToDTOs(movieEntities);
+		return MovieEntityConverter.convertMovieEntitiesToModels(movieEntities);
 	}
 
 	@Override
-	public List<MovieDTO> listMoviesByCinema(int cinemaId) {
+	public List<Movie> listMoviesByCinema(int cinemaId) {
 		String select = "SELECT m FROM Movie m WHERE m.cinema.id = :cinemaId";
 		TypedQuery<MovieEntity> query = this.entityManager.createQuery(select, MovieEntity.class);
 		query.setParameter("cinemaId", cinemaId);
 
 		List<MovieEntity> movieEntities = query.getResultList();
 
-		return MovieEntityConverter.convertMovieEntitiesToDTOs(movieEntities);
+		return MovieEntityConverter.convertMovieEntitiesToModels(movieEntities);
 	}
 
 }

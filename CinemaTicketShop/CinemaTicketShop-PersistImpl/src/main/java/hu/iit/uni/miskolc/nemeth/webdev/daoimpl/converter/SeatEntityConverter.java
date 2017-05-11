@@ -3,31 +3,31 @@ package hu.iit.uni.miskolc.nemeth.webdev.daoimpl.converter;
 import java.util.ArrayList;
 import java.util.List;
 
-import hu.iit.uni.miskolc.nemeth.webdev.dao.dto.SeatDTO;
 import hu.iit.uni.miskolc.nemeth.webdev.daoimpl.entity.SeatEntity;
+import hu.iit.uni.miskolc.nemeth.webdev.model.Seat;
 
 public final class SeatEntityConverter {
 
 	private SeatEntityConverter() {
 	}
 
-	public static List<SeatDTO> convertSeatEntitiesToDTOs(List<SeatEntity> seatEntities) {
-		List<SeatDTO> seatDTOs = new ArrayList<>();
+	public static List<Seat> convertSeatEntitiesToModels(List<SeatEntity> seatEntities) {
+		List<Seat> seats = new ArrayList<>();
 
 		for (SeatEntity seatEntity : seatEntities) {
-			seatDTOs.add(convertSeatEntityToDTO(seatEntity));
+			seats.add(convertSeatEntityToModel(seatEntity));
 		}
-		return seatDTOs;
+		return seats;
 	}
 
-	public static SeatDTO convertSeatEntityToDTO(SeatEntity seatEntity) {
-		SeatDTO seatDTO = new SeatDTO();
-		seatDTO.setId(seatEntity.getId());
-		seatDTO.setRowNumber(seatEntity.getRowNumber());
-		seatDTO.setSeatNumber(seatEntity.getSeatNumber());
-		seatDTO.setTaken(seatEntity.isTaken());
-		seatDTO.setScreeningRoom(ScreeningRoomEntityConverter.convertScreeningRoomEntityToDTO(seatEntity.getScreeningRoom()));
+	public static Seat convertSeatEntityToModel(SeatEntity seatEntity) {
+		Seat seat = new Seat();
+		seat.setId(seatEntity.getId());
+		seat.setRowNumber(seatEntity.getRowNumber());
+		seat.setSeatNumber(seatEntity.getSeatNumber());
+		seat.setTaken(seatEntity.isTaken());
+		seat.setScreeningRoom(ScreeningRoomEntityConverter.convertScreeningRoomEntityToModel(seatEntity.getScreeningRoom()));
 		
-		return seatDTO;
+		return seat;
 	}
 }

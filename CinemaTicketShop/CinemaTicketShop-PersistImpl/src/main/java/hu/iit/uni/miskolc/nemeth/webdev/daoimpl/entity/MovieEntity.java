@@ -7,6 +7,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import hu.iit.uni.miskolc.nemeth.webdev.model.MovieAgeRestriction;
+import hu.iit.uni.miskolc.nemeth.webdev.model.MovieGenre;
+import hu.iit.uni.miskolc.nemeth.webdev.model.MovieScreenType;
+
 @Entity(name = "Movie")
 @Table(name = "Movies")
 public class MovieEntity {
@@ -23,13 +27,13 @@ public class MovieEntity {
 	private int cost;
 
 	@Column(name = "Genre")
-	private String genre;
+	private MovieGenre genre;
 
 	@Column(name = "AgeResctriction")
-	private String ageResctriction;
+	private MovieAgeRestriction  ageResctriction;
 
 	@Column(name = "ScreenType")
-	private String screenType;
+	private MovieScreenType screenType;
 
 	public MovieEntity() {
 	}
@@ -58,27 +62,27 @@ public class MovieEntity {
 		this.cost = cost;
 	}
 
-	public String getGenre() {
+	public MovieGenre getGenre() {
 		return genre;
 	}
 
-	public void setGenre(String genre) {
+	public void setGenre(MovieGenre genre) {
 		this.genre = genre;
 	}
 
-	public String getAgeResctriction() {
+	public MovieAgeRestriction getAgeResctriction() {
 		return ageResctriction;
 	}
 
-	public void setAgeResctriction(String ageResctriction) {
+	public void setAgeResctriction(MovieAgeRestriction ageResctriction) {
 		this.ageResctriction = ageResctriction;
 	}
 
-	public String getScreenType() {
+	public MovieScreenType getScreenType() {
 		return screenType;
 	}
 
-	public void setScreenType(String screenType) {
+	public void setScreenType(MovieScreenType screenType) {
 		this.screenType = screenType;
 	}
 }

@@ -3,31 +3,31 @@ package hu.iit.uni.miskolc.nemeth.webdev.daoimpl.converter;
 import java.util.ArrayList;
 import java.util.List;
 
-import hu.iit.uni.miskolc.nemeth.webdev.dao.dto.TicketDTO;
 import hu.iit.uni.miskolc.nemeth.webdev.daoimpl.entity.TicketEntity;
+import hu.iit.uni.miskolc.nemeth.webdev.model.Ticket;
 
 public final class TicketEntityConverter {
 
 	private TicketEntityConverter() {
 	}
 
-	public static List<TicketDTO> convertTicketEntitiesToDTOs(List<TicketEntity> ticketEntities) {
-		List<TicketDTO> ticketDTOs = new ArrayList<>();
+	public static List<Ticket> convertTicketEntitiesToModels(List<TicketEntity> ticketEntities) {
+		List<Ticket> tickets = new ArrayList<>();
 
 		for (TicketEntity ticketEntity : ticketEntities) {
-			ticketDTOs.add(convertTicketEntityToDTO(ticketEntity));
+			tickets.add(convertTicketEntityToModel(ticketEntity));
 		}
 
-		return ticketDTOs;
+		return tickets;
 	}
 
-	private static TicketDTO convertTicketEntityToDTO(TicketEntity ticketEntity) {
-		TicketDTO ticketDTO = new TicketDTO();
-		ticketDTO.setId(ticketEntity.getId());
-		ticketDTO.setSeatDTO(SeatEntityConverter.convertSeatEntityToDTO(ticketEntity.getSeatEntity()));
-		ticketDTO.setShow(ShowEntityConverter.convertShowEntityToDTO(ticketEntity.getShow()));
-		ticketDTO.setUser(UserEntityConverter.convertUserEntityToDTO(ticketEntity.getUser()));
+	private static Ticket convertTicketEntityToModel(TicketEntity ticketEntity) {
+		Ticket ticket = new Ticket();
+		ticket.setId(ticketEntity.getId());
+		ticket.setSeat(SeatEntityConverter.convertSeatEntityToModel(ticketEntity.getSeatEntity()));
+		ticket.setShow(ShowEntityConverter.convertShowEntityToModel(ticketEntity.getShow()));
+		ticket.setUser(UserEntityConverter.convertUserEntityToModel(ticketEntity.getUser()));
 
-		return ticketDTO;
+		return ticket;
 	}
 }

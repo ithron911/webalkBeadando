@@ -1,19 +1,19 @@
 package hu.iit.uni.miskolc.nemeth.webdev.daoimpl.converter;
 
-import hu.iit.uni.miskolc.nemeth.webdev.dao.dto.CinemaDTO;
 import hu.iit.uni.miskolc.nemeth.webdev.daoimpl.entity.CinemaEntity;
+import hu.iit.uni.miskolc.nemeth.webdev.model.Cinema;
 
 public final class CinemaEntityConverter {
 
 	private CinemaEntityConverter() {
 	}
 
-	public static CinemaDTO convertCinemaEntityToDto(CinemaEntity cinemaEntity) {
-		CinemaDTO cinemaDTO = new CinemaDTO();
-		cinemaDTO.setId(cinemaEntity.getId());
-		cinemaDTO.setAddress(cinemaEntity.getAddress());
-		cinemaDTO.setName(cinemaEntity.getName());
+	public static Cinema convertCinemaEntityToModel(CinemaEntity cinemaEntity) {
+		Cinema cinema = new Cinema();
+		cinema.setId(cinemaEntity.getId());
+		cinema.setAddress(cinemaEntity.getAddress());
+		cinema.setName(cinemaEntity.getName());
 
-		return cinemaDTO;
+		return cinema;
 	}
 }
