@@ -54,10 +54,10 @@ INSERT INTO Shows (ID, ScreeningRoomID, MovieID, Date) VALUES
 INSERT INTO Tickets (ID, UserID, ShowID, SeatID) VALUES
 	(1, 2, 1, 3),
 	(2, 2, 1, 4),
-	(3, 3, 2, 3),
-	(4, 3, 2, 4),
-	(5, 4, 4, 1),
-	(6, 4, 4, 2),
-	(7, 4, 4, 3),
-	(8, 4, 4, 4),
-	(9, 4, 4, 5);
+	(3, 3, 2, 8),
+	(4, 3, 2, 9),
+	(5, 4, 4, 16),
+	(6, 4, 4, 17),
+	(7, 4, 4, 18),
+	(8, 4, 4, 19),
+	(9, 4, 4, 20);
