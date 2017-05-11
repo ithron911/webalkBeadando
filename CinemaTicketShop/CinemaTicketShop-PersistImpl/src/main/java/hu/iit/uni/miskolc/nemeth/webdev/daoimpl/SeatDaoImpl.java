@@ -34,7 +34,7 @@ public class SeatDaoImpl implements SeatDao {
 
 			this.entityManager.merge(seatEntity);
 		} else {
-			throw new InvalidSeatException("A helyfoglalás sikertelen volt!");
+			throw new InvalidSeatException();
 		}
 	}
 
@@ -51,9 +51,16 @@ public class SeatDaoImpl implements SeatDao {
 
 	@Override
 	public boolean isSeatTaken(int seatId) throws InvalidSeatException {
+		boolean isSeatTaken = false;
 		SeatEntity seatEntity = this.entityManager.find(SeatEntity.class, seatId);
 
-		return seatEntity.isTaken();
+		if (seatEntity != null) {
+			isSeatTaken = seatEntity.isTaken();
+		} else {
+			throw new InvalidSeatException();
+		}
+
+		return isSeatTaken;
 	}
 
 }

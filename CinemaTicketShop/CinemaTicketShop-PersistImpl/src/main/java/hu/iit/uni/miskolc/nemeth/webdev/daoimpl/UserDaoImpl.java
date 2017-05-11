@@ -42,7 +42,7 @@ public class UserDaoImpl implements UserDao {
 
 			this.entityManager.merge(userEntity);
 		} else {
-			throw new InvalidUserException("Az adatok mentése sikertelen volt!");
+			throw new InvalidUserException();
 		}
 	}
 
