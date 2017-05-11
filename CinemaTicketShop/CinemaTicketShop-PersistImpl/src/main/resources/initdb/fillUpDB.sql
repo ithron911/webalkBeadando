@@ -1,6 +1,6 @@
 use cinematicketshop;
 
-INSERT INTO Users (ID, Username, Password, Firstname, Lastname, Age, Email) VALUES
+INSERT INTO Users (ID, Username, Password, Firstname, Lastname, Age, Email, Enabled, Role) VALUES
 	(1, 'user', 'user', 'John', 'Smith', 23, 'john.smith@gmail.com', true, 'USER'),
 	(2, 'test1', 'test1', 'Michael', 'Smith', 22, 'michael.smith@gmail.com', true, 'USER'),
 	(3, 'test2', 'test2', 'Jane', 'Sheperd', 20, 'jane.sheperd@gmail.com', true, 'USER'),
