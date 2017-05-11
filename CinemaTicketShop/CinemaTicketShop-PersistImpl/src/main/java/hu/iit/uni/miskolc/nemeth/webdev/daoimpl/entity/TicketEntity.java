@@ -20,7 +20,7 @@ public class TicketEntity {
 	private int id;
 
 	@OneToOne
-	@JoinColumn(name = "UserID")
+	@JoinColumn(name = "Username")
 	private UserEntity user;
 
 	@OneToOne
