@@ -1,12 +1,16 @@
 package hu.iit.uni.miskolc.nemeth.webdev.daoimpl.entity;
 
 import javax.persistence.Column;
+import javax.persistence.Convert;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import hu.iit.uni.miskolc.nemeth.webdev.daoimpl.converter.MovieAgeRestrictionConverter;
+import hu.iit.uni.miskolc.nemeth.webdev.daoimpl.converter.MovieGenreConverter;
+import hu.iit.uni.miskolc.nemeth.webdev.daoimpl.converter.MovieScreenTypeConverter;
 import hu.iit.uni.miskolc.nemeth.webdev.model.MovieAgeRestriction;
 import hu.iit.uni.miskolc.nemeth.webdev.model.MovieGenre;
 import hu.iit.uni.miskolc.nemeth.webdev.model.MovieScreenType;
@@ -27,12 +31,15 @@ public class MovieEntity {
 	private int cost;
 
 	@Column(name = "Genre")
+	@Convert(converter = MovieGenreConverter.class)
 	private MovieGenre genre;
 
 	@Column(name = "AgeResctriction")
+	@Convert(converter = MovieAgeRestrictionConverter.class)
 	private MovieAgeRestriction  ageResctriction;
 
 	@Column(name = "ScreenType")
+	@Convert(converter = MovieScreenTypeConverter.class)
 	private MovieScreenType screenType;
 
 	public MovieEntity() {
