@@ -7,10 +7,10 @@ import org.springframework.stereotype.Service;
 
 import hu.iit.uni.miskolc.nemeth.webdev.dao.MovieDao;
 import hu.iit.uni.miskolc.nemeth.webdev.model.Movie;
-import hu.iit.uni.miskolc.nemeth.webdev.service.MoviesService;
+import hu.iit.uni.miskolc.nemeth.webdev.service.MovieService;
 
 @Service
-public class MovieServiceImpl implements MoviesService {
+public class MovieServiceImpl implements MovieService {
 
 	@Autowired
 	private MovieDao movieDao;

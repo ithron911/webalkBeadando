@@ -4,7 +4,7 @@ import java.util.List;
 
 import hu.iit.uni.miskolc.nemeth.webdev.model.Movie;
 
-public interface MoviesService {
+public interface MovieService {
 	List<Movie> listMoviesByGenre(String genre);
 	List<Movie> listMoviesByCinema(int cinemaId);
 }
