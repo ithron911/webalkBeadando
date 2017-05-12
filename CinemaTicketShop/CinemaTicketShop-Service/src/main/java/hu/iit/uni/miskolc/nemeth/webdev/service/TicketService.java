@@ -9,5 +9,5 @@ import hu.iit.uni.miskolc.nemeth.webdev.service.exception.SeatBookedException;
 public interface TicketService {
 	void buyTicket(String username, int showId, int seatId) throws InvalidTicketResourcesException, SeatBookedException;
 
-	List<Ticket> getTicketsByUserId(int userId);
+	List<Ticket> getTicketsByUserId(String username);
 }

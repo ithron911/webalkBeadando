@@ -59,8 +59,8 @@ public class TicketServiceImpl implements TicketService {
 	}
 
 	@Override
-	public List<Ticket> getTicketsByUserId(int userId) {
-		return this.ticketDao.getTicketsByUserId(userId);
+	public List<Ticket> getTicketsByUserId(String username) {
+		return this.ticketDao.getTicketsByUserId(username);
 	}
 
 }

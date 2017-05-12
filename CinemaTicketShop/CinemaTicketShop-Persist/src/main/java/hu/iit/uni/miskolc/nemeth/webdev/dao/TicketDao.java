@@ -7,5 +7,5 @@ import hu.iit.uni.miskolc.nemeth.webdev.model.Ticket;
 public interface TicketDao {
 	void buyTicket(Ticket ticket);
 
-	List<Ticket> getTicketsByUserId(int userId);
+	List<Ticket> getTicketsByUserId(String username);
 }

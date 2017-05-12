@@ -42,10 +42,10 @@ public class TicketDaoImpl implements TicketDao {
 	}
 
 	@Override
-	public List<Ticket> getTicketsByUserId(int userId) {
-		String select = "SELECT t from Ticket t WHERE t.user.id = :userId";
+	public List<Ticket> getTicketsByUserId(String username) {
+		String select = "SELECT t from Ticket t WHERE t.user.username = :username";
 		TypedQuery<TicketEntity> query = this.entityManager.createQuery(select, TicketEntity.class);
-		query.setParameter("userId", userId);
+		query.setParameter("username", username);
 
 		List<TicketEntity> ticketEntities = query.getResultList();
 		return TicketEntityConverter.convertTicketEntitiesToModels(ticketEntities);
