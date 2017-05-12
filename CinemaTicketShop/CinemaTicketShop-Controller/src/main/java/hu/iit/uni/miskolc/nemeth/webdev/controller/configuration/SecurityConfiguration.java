@@ -34,6 +34,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 				.usernameParameter("username")
 				.passwordParameter("password")
 			.and()
+				.logout().permitAll()
+			.and()
 				.csrf().disable();
 	}
 }
