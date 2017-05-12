@@ -7,10 +7,10 @@ INSERT INTO Users (Username, Password, Firstname, Lastname, Age, Email, Enabled)
 	('test3', 'test3', 'John', 'Cooper', 20, 'jane.sheperd@gmail.com', true);
 
 INSERT INTO UserRoles(ID, Username, Role) VALUES
-	(1, 'user', 'USER'),
-	(2, 'test1', 'USER'),
-	(3, 'test2', 'USER'),
-	(4, 'test3', 'USER');
+	(1, 'user', 'ROLE_USER'),
+	(2, 'test1', 'ROLE_USER'),
+	(3, 'test2', 'ROLE_USER'),
+	(4, 'test3', 'ROLE_USER');
 
 INSERT INTO Cinemas (ID, Address, Name) VALUES
 	(1, '3525. Miskolc, Miskolc Pláza, Szentpáli út 2-4.', 'Cinema City Miskolc'),
