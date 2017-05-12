@@ -3,7 +3,8 @@ package hu.iit.uni.miskolc.nemeth.webdev.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -28,13 +29,19 @@ public class TicketController {
 
 	@RequestMapping(value = "/buyTicket", method = RequestMethod.POST)
 	public void buyTicket(@RequestBody TicketRequest ticketRequest) throws InvalidTicketResourcesException, SeatBookedException {
-		this.ticketService.buyTicket(ticketRequest.getUsername(), ticketRequest.getShowId(), ticketRequest.getSeatId());
+		this.ticketService.buyTicket(getUsername(), ticketRequest.getShowId(), ticketRequest.getSeatId());
 	}
 
-	@RequestMapping(value = "/getTicketsByUserId/{userId}", method = RequestMethod.GET)
-	List<TicketResponse> getTicketsByUserId(@PathVariable("userId") int userId) {
-		List<Ticket> tickets = this.ticketService.getTicketsByUserId(userId);
+	@RequestMapping(value = "/getTicketsByUser", method = RequestMethod.GET)
+	List<TicketResponse> getTicketsByUserId() {
+		List<Ticket> tickets = this.ticketService.getTicketsByUserId(getUsername());
 
 		return TicketConverter.convertTicketModelssToTicketResponses(tickets);
+	}
+
+	private String getUsername() {
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+
+		return auth.getName();
 	}
 }
